@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dharmabandh | Official Community & Village Portal</title>
-  <meta name="description" content="Official community portal for Dharmabandh, Jharkhand. Explore regional heritage, youth initiatives, and village updates." />
+  <title>Dharmabandh | Official Community Portal</title>
+  <meta name="description" content="Official digital portal of Dharmabandh, Jharkhand. Community heritage, village gallery, and local developments." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -70,41 +70,82 @@
     }
 
     .container {
-      max-width: 900px;
-      margin: -30px auto 0;
+      max-width: 1000px;
+      margin: 40px auto 0;
       padding: 0 20px;
     }
 
-    .image-card {
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .gallery-card {
       background: var(--card-bg);
       border-radius: 20px;
-      padding: 16px;
-      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
       border: 1px solid #e2e8f0;
-      margin-bottom: 35px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
     }
 
-    .image-card img {
+    .gallery-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .gallery-card img {
       width: 100%;
-      max-height: 480px;
+      height: 290px;
       object-fit: cover;
-      border-radius: 14px;
       display: block;
+      background-color: #f1f5f9;
     }
 
-    .image-card .caption {
-      margin-top: 14px;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-main);
+    .gallery-caption {
+      padding: 18px 20px;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-top: 1px solid #f1f5f9;
     }
 
-    .image-card .sub-caption {
+    /* Mast Hindi Typography Styling */
+    .royal-hindi {
+      font-family: 'Rozha One', 'Tiro Devanagari Hindi', serif;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+      background: linear-gradient(135deg, #0f172a 20%, #1e3a8a 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .gallery-caption p {
       font-size: 13px;
-      color: var(--text-muted);
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
     }
 
+    /* Info Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -158,11 +199,19 @@
 
   <main class="container">
 
-    <section class="image-card">
-      <img src="dharmabandh-jharkhand-omkar-mahato.jpg" alt="Dharmabandh Jharkhand Village Community" />
-      <div class="caption">Community & Regional Heritage</div>
-      <div class="sub-caption">Dharmabandh, Jharkhand</div>
+    <div class="section-title">📸 Village Gallery</div>
+
+    <section class="gallery-grid" id="autoGallery">
+      <div class="gallery-card">
+        <img src="dharmabandh-jharkhand-omkar-mahato.jpg" alt="नवयुवक संघ समिति धर्माबांध" />
+        <div class="gallery-caption">
+          <h3 class="royal-hindi">नवयुवक संघ समिति धर्माबांध</h3>
+          <p>Dharmabandh, Jharkhand</p>
+        </div>
+      </div>
     </section>
+
+    <div class="section-title">📌 Key Highlights</div>
 
     <section class="grid">
       <div class="info-card">
@@ -189,6 +238,45 @@
     </footer>
 
   </main>
+
+  <script>
+    async function loadAutoGallery() {
+      const gallery = document.getElementById('autoGallery');
+      const repoOwner = 'dharmabandh';
+      const repoName = 'Dharmabandh';
+      const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/`;
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) return;
+
+        const files = await response.json();
+        const validExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
+
+        const imageFiles = files.filter(file => 
+          file.type === 'file' && validExtensions.some(ext => file.name.toLowerCase().endsWith(ext))
+        );
+
+        if (imageFiles.length > 0) {
+          gallery.innerHTML = imageFiles.map(img => `
+            <div class="gallery-card">
+              <a href="${img.name}" target="_blank" rel="noopener noreferrer">
+                <img src="${img.name}" alt="नवयुवक संघ समिति धर्माबांध" loading="lazy" />
+              </a>
+              <div class="gallery-caption">
+                <h3 class="royal-hindi">नवयुवक संघ समिति धर्माबांध</h3>
+                <p>Dharmabandh, Jharkhand</p>
+              </div>
+            </div>
+          `).join('');
+        }
+      } catch (err) {
+        console.log('Using default gallery image.');
+      }
+    }
+
+    loadAutoGallery();
+  </script>
 
 </body>
 </html>
