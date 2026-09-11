@@ -215,7 +215,6 @@ textarea{
   </div>
 </header>
 
-
 <main>
 
 <section class="card">
@@ -228,7 +227,6 @@ textarea{
   अपने गाँव धर्माबांध की कोई खूबसूरत तस्वीर हमारे साथ साझा करें।
   आपकी तस्वीर समीक्षा के बाद वेबसाइट की गैलरी में दिखाई जा सकती है।
 </p>
-
 
 <form id="uploadForm">
 
@@ -257,7 +255,6 @@ textarea{
 
 </div>
 
-
 <label>
   👤 आपका नाम
 </label>
@@ -269,7 +266,6 @@ textarea{
   placeholder="अपना नाम लिखें"
 >
 
-
 <label>
   📝 तस्वीर के बारे में
 </label>
@@ -280,7 +276,6 @@ textarea{
   placeholder="इस तस्वीर के बारे में कुछ लिखें (वैकल्पिक)"
 ></textarea>
 
-
 <button
   class="submit"
   id="submitBtn"
@@ -289,18 +284,15 @@ textarea{
   📤 तस्वीर भेजें
 </button>
 
-
 <div
   id="success"
   class="msg success"
 ></div>
 
-
 <div
   id="error"
   class="msg error"
 ></div>
-
 
 <div
   id="debug"
@@ -308,7 +300,6 @@ textarea{
 ></div>
 
 </form>
-
 
 <div class="back">
   <a href="index.html">
@@ -320,7 +311,6 @@ textarea{
 
 </main>
 
-
 <script>
 
 const SUPABASE_URL =
@@ -331,7 +321,6 @@ const SUPABASE_KEY =
 
 const BUCKET =
 "user-uploads";
-
 
 const form =
 document.getElementById("uploadForm");
@@ -399,7 +388,6 @@ photo.onchange = () => {
     return;
   }
 
-
   if(file.size > 10 * 1024 * 1024){
 
     showError(
@@ -410,7 +398,6 @@ photo.onchange = () => {
 
     return;
   }
-
 
   preview.src =
   URL.createObjectURL(file);
@@ -425,13 +412,11 @@ form.onsubmit = async (e) => {
 
   e.preventDefault();
 
-
   document.getElementById("error").style.display =
   "none";
 
   document.getElementById("debug").style.display =
   "none";
-
 
   const file =
   photo.files[0];
@@ -442,7 +427,6 @@ form.onsubmit = async (e) => {
   const caption =
   document.getElementById("caption").value.trim();
 
-
   if(!file || !name){
 
     showError(
@@ -452,13 +436,11 @@ form.onsubmit = async (e) => {
     return;
   }
 
-
   btn.disabled =
   true;
 
   btn.textContent =
   "⏳ Uploading...";
-
 
   try{
 
@@ -470,7 +452,6 @@ form.onsubmit = async (e) => {
     file.name
     .toLowerCase()
     .replace(/[^a-z0-9._-]/g,"-");
-
 
     const path =
     Date.now() + "-" + safe;
@@ -495,7 +476,6 @@ form.onsubmit = async (e) => {
       "false"
 
     };
-
 
     const storageResponse =
     await fetch(
@@ -535,6 +515,8 @@ form.onsubmit = async (e) => {
 
     /*
       SAVE SUBMISSION IN DATABASE
+      IMPORTANT:
+      Save path in BOTH file_path and photo_path
     */
 
     const databaseResponse =
@@ -573,6 +555,8 @@ form.onsubmit = async (e) => {
 
           file_path:path,
 
+          photo_path:path,
+
           status:"pending"
 
         })
@@ -605,19 +589,16 @@ form.onsubmit = async (e) => {
       "✅ आपकी तस्वीर सफलतापूर्वक भेज दी गई है।"
     );
 
-
     form.reset();
 
     preview.style.display =
     "none";
-
 
   }
 
   catch(err){
 
     console.error(err);
-
 
     showError(
 
@@ -640,7 +621,6 @@ form.onsubmit = async (e) => {
   }
 
 };
-
 
 </script>
 
