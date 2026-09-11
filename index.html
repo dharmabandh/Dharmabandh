@@ -5,73 +5,44 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>धर्माबांध | Dharmabandh Dhanbad, Jharkhand</title>
+  <title>धर्माबांध | Dharmabandh, Dhanbad, Jharkhand</title>
 
-  <meta
-    name="description"
-    content="धर्माबांध (Dharmabandh), धनबाद, झारखंड का डिजिटल गाँव पोर्टल। गाँव की तस्वीरें, यादें, समुदाय और महत्वपूर्ण जानकारी।"
-  >
+  <meta name="description"
+    content="धर्माबांध (Dharmabandh), धनबाद, झारखंड का डिजिटल गाँव पोर्टल। हमारा गाँव, हमारी पहचान, हमारी यादें।">
 
-  <meta
-    name="keywords"
-    content="Dharmabandh, Dharmabandh Dhanbad, Dharmabandh Jharkhand, धर्माबांध, धर्माबांध धनबाद, Dharmabandh village"
-  >
+  <meta name="keywords"
+    content="Dharmabandh, धर्माबांध, Dharmabandh Dhanbad, Dharmabandh Jharkhand, Dhanbad village">
 
   <meta name="author" content="Dharmabandh Community Portal">
 
-  <link
-    rel="canonical"
-    href="https://dharmabandh.github.io/Dharmabandh/"
-  >
+  <link rel="canonical"
+    href="https://dharmabandh.github.io/Dharmabandh/">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="धर्माबांध | Dharmabandh">
-  <meta
-    property="og:description"
-    content="हमारा गाँव • हमारी पहचान • हमारी यादें"
-  >
+  <meta property="og:description"
+    content="हमारा गाँव • हमारी पहचान • हमारी यादें">
   <meta property="og:type" content="website">
-  <meta
-    property="og:url"
-    content="https://dharmabandh.github.io/Dharmabandh/"
-  >
-
-  <!-- Theme -->
-  <meta name="theme-color" content="#244d36">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <meta property="og:url"
+    content="https://dharmabandh.github.io/Dharmabandh/">
 
   <style>
-    /* =========================================================
-       DHARMABANDH COMMUNITY PORTAL
-       Single-file version
-       ========================================================= */
-
     :root {
-      --green-dark: #173b29;
-      --green: #285a3d;
-      --green-light: #4d7b59;
-      --gold: #c69a4b;
-      --cream: #f8f5ed;
-      --cream-dark: #eee8d9;
+      --green: #285943;
+      --dark-green: #173d2c;
+      --light-green: #edf5ef;
+      --gold: #c79b45;
+      --cream: #faf8f2;
+      --text: #243129;
+      --muted: #68736b;
       --white: #ffffff;
-      --text: #253128;
-      --muted: #667169;
-      --shadow: 0 12px 35px rgba(26, 48, 35, 0.10);
+      --shadow: 0 12px 35px rgba(20, 50, 35, .10);
       --radius: 22px;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -79,11 +50,14 @@
     }
 
     body {
-      font-family: "Noto Sans Devanagari", system-ui, sans-serif;
-      color: var(--text);
+      font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        Arial,
+        sans-serif;
       background: var(--cream);
+      color: var(--text);
       line-height: 1.7;
-      overflow-x: hidden;
     }
 
     a {
@@ -91,99 +65,74 @@
       text-decoration: none;
     }
 
-    button {
-      font: inherit;
-    }
-
     img {
       max-width: 100%;
+      display: block;
     }
 
-    /* =========================================================
-       NAVIGATION
-       ========================================================= */
-
+    /* NAVBAR */
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
+      width: 100%;
       z-index: 1000;
-      padding: 14px 20px;
-      transition: 0.3s ease;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(40,89,67,.08);
     }
 
-    .navbar.scrolled {
-      background: rgba(23, 59, 41, 0.96);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-    }
-
-    .nav-inner {
-      max-width: 1180px;
+    .nav-container {
+      max-width: 1200px;
       margin: auto;
+      min-height: 70px;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .brand {
-      color: white;
+      font-size: 1.25rem;
       font-weight: 800;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      letter-spacing: 0.2px;
-    }
-
-    .brand-leaf {
-      font-size: 1.45rem;
+      color: var(--dark-green);
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 25px;
+      font-weight: 600;
+      color: #405047;
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.92);
-      padding: 8px 13px;
-      border-radius: 10px;
-      font-size: 0.92rem;
-      transition: 0.2s;
+      transition: .25s ease;
     }
 
     .nav-links a:hover {
-      background: rgba(255,255,255,0.12);
-      color: white;
+      color: var(--green);
     }
 
-    .menu-button {
+    .menu-btn {
       display: none;
-      border: 0;
-      background: rgba(255,255,255,0.12);
-      color: white;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
+      background: none;
+      border: 1px solid #ccd7d0;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      padding: 5px 10px;
       cursor: pointer;
-      font-size: 1.3rem;
+      color: var(--dark-green);
     }
 
-    /* =========================================================
-       HERO
-       ========================================================= */
-
+    /* HERO */
     .hero {
-      min-height: 100svh;
+      height: 100vh;
+      min-height: 620px;
       position: relative;
-      background: #17271d;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #1d3025;
     }
 
     .slides {
@@ -195,7 +144,7 @@
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: opacity 0.8s ease;
+      transition: opacity 1s ease-in-out;
       pointer-events: none;
     }
 
@@ -207,8 +156,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      display: block;
     }
 
     .hero-overlay {
@@ -216,170 +163,85 @@
       inset: 0;
       background:
         linear-gradient(
-          180deg,
-          rgba(0,0,0,0.38) 0%,
-          rgba(0,0,0,0.18) 35%,
-          rgba(0,0,0,0.62) 100%
+          to bottom,
+          rgba(0,0,0,.25),
+          rgba(0,0,0,.12) 40%,
+          rgba(0,0,0,.68)
         );
       z-index: 2;
     }
 
     .hero-content {
-      position: relative;
+      position: absolute;
       z-index: 5;
-      width: min(920px, 92%);
+      left: 50%;
+      bottom: 13%;
+      transform: translateX(-50%);
+      width: min(1000px, 90%);
       text-align: center;
       color: white;
-      padding: 90px 10px 100px;
     }
 
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 15px;
-      border: 1px solid rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.10);
-      backdrop-filter: blur(8px);
-      border-radius: 50px;
-      font-size: 0.85rem;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.3rem, 7vw, 5.4rem);
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 7vw, 5.8rem);
       line-height: 1.15;
-      font-weight: 800;
-      text-shadow: 0 4px 22px rgba(0,0,0,0.35);
+      font-weight: 900;
+      text-shadow: 0 5px 25px rgba(0,0,0,.4);
       margin-bottom: 12px;
     }
 
-    .hero-subtitle {
-      font-size: clamp(1rem, 3vw, 1.45rem);
-      opacity: 0.95;
-      margin-bottom: 28px;
+    .hero-content p {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      letter-spacing: .5px;
+      text-shadow: 0 2px 10px rgba(0,0,0,.6);
     }
 
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 48px;
-      padding: 11px 19px;
-      border-radius: 13px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-weight: 700;
-      transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #21170b;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.06);
-    }
-
-    .btn-light {
-      background: rgba(255,255,255,0.12);
-      color: white;
-      border-color: rgba(255,255,255,0.4);
-      backdrop-filter: blur(8px);
-    }
-
-    .btn-light:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    .slide-controls {
+    .hero-controls {
       position: absolute;
-      z-index: 10;
-      left: 20px;
-      right: 20px;
-      top: 50%;
+      z-index: 8;
+      left: 50%;
+      bottom: 35px;
+      transform: translateX(-50%);
       display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      pointer-events: none;
+      align-items: center;
+      gap: 15px;
     }
 
-    .slide-arrow {
-      pointer-events: auto;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.4);
-      background: rgba(0,0,0,0.25);
+    .hero-arrow {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.6);
+      background: rgba(0,0,0,.25);
       color: white;
+      border-radius: 50%;
       cursor: pointer;
-      font-size: 1.3rem;
-      backdrop-filter: blur(8px);
-      transition: 0.2s;
-    }
-
-    .slide-arrow:hover {
-      background: rgba(255,255,255,0.2);
+      font-size: 1.2rem;
+      backdrop-filter: blur(5px);
     }
 
     .dots {
-      position: absolute;
-      z-index: 10;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
       display: flex;
       gap: 7px;
-      max-width: 80%;
-      overflow-x: auto;
-      padding: 4px;
     }
 
     .dot {
       width: 8px;
       height: 8px;
-      border: 0;
       border-radius: 50%;
-      background: rgba(255,255,255,0.45);
+      background: rgba(255,255,255,.5);
       cursor: pointer;
-      flex: 0 0 auto;
-      transition: 0.25s;
+      border: none;
+      padding: 0;
     }
 
     .dot.active {
-      width: 25px;
-      border-radius: 20px;
       background: white;
+      transform: scale(1.35);
     }
 
-    .hero-loading {
-      position: absolute;
-      z-index: 4;
-      bottom: 72px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255,255,255,0.7);
-      font-size: 0.72rem;
-      display: none;
-    }
-
-    /* =========================================================
-       COMMON SECTIONS
-       ========================================================= */
-
+    /* GENERAL */
     section {
-      padding: 82px 20px;
-      scroll-margin-top: 75px;
+      padding: 90px 20px;
     }
 
     .container {
@@ -388,603 +250,5 @@
     }
 
     .section-heading {
-      max-width: 720px;
-      margin-bottom: 38px;
-    }
-
-    .eyebrow {
-      color: var(--green);
-      font-weight: 800;
-      font-size: 0.82rem;
-      letter-spacing: 1.2px;
-      margin-bottom: 7px;
-    }
-
-    .section-heading h2 {
-      color: var(--green-dark);
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-    }
-
-    /* =========================================================
-       ABOUT
-       ========================================================= */
-
-    .about {
-      background: var(--cream);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .about-text,
-    .info-card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .about-text p {
-      color: #526058;
-      margin-bottom: 17px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .info-item {
-      background: #f6f7f3;
-      border-radius: 15px;
-      padding: 15px;
-      border: 1px solid #e8ece4;
-    }
-
-    .info-label {
-      display: block;
-      color: var(--muted);
-      font-size: 0.76rem;
-      margin-bottom: 3px;
-    }
-
-    .info-value {
-      display: block;
-      color: var(--green-dark);
-      font-weight: 800;
-      font-size: 0.93rem;
-    }
-
-    .historical-note {
-      margin-top: 15px;
-      font-size: 0.76rem;
-      color: var(--muted);
-      padding: 12px;
-      border-left: 3px solid var(--gold);
-      background: #fbf9f3;
-      border-radius: 5px;
-    }
-
-    /* =========================================================
-       GALLERY
-       ========================================================= */
-
-    .gallery-section {
-      background: white;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-      aspect-ratio: 4 / 3;
-      background: #e6e9e4;
-      cursor: pointer;
-      border: 0;
-      padding: 0;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.055);
-    }
-
-    .gallery-caption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 30px 13px 11px;
-      color: white;
-      font-size: 0.78rem;
-      text-align: left;
-      background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    }
-
-    .gallery-empty {
-      grid-column: 1 / -1;
       text-align: center;
-      padding: 45px 20px;
-      background: #f5f6f2;
-      border-radius: 18px;
-      color: var(--muted);
-    }
-
-    /* =========================================================
-       EVENTS
-       ========================================================= */
-
-    .events {
-      background: var(--cream);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: white;
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(35,75,52,0.05);
-    }
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 13px;
-    }
-
-    .card h3 {
-      color: var(--green-dark);
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .update-badge {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 5px 9px;
-      border-radius: 8px;
-      background: #f3f3ee;
-      color: #777d76;
-      font-size: 0.7rem;
-    }
-
-    /* =========================================================
-       YOUTH COMMITTEE
-       ========================================================= */
-
-    .youth {
-      background: var(--green-dark);
-      color: white;
-    }
-
-    .youth .section-heading h2,
-    .youth .section-heading p {
-      color: white;
-    }
-
-    .youth .section-heading p {
-      opacity: 0.75;
-    }
-
-    .youth-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .youth-content {
-      padding: 35px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.10);
-    }
-
-    .youth-content h3 {
-      color: #e2c37e;
-      font-size: 1.4rem;
-      margin-bottom: 7px;
-    }
-
-    .youth-content p {
-      opacity: 0.82;
-      margin-bottom: 18px;
-    }
-
-    .placeholder-list {
-      display: grid;
-      gap: 9px;
-    }
-
-    .placeholder-list div {
-      padding: 10px 13px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 10px;
-      color: rgba(255,255,255,0.72);
-      font-size: 0.85rem;
-    }
-
-    .youth-photo {
-      min-height: 320px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: rgba(255,255,255,0.05);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .youth-photo img {
-      width: 100%;
-      height: 100%;
-      min-height: 320px;
-      object-fit: cover;
-    }
-
-    .photo-placeholder {
-      text-align: center;
-      color: rgba(255,255,255,0.5);
-      padding: 25px;
-    }
-
-    /* =========================================================
-       MEMORIES
-       ========================================================= */
-
-    .memories {
-      background:
-        radial-gradient(circle at top right, rgba(198,154,75,0.12), transparent 35%),
-        var(--cream);
-      text-align: center;
-    }
-
-    .memory-box {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: clamp(28px, 6vw, 55px);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .memory-icon {
-      font-size: 3rem;
-      margin-bottom: 8px;
-    }
-
-    .memory-box h2 {
-      color: var(--green-dark);
-      font-size: clamp(1.7rem, 5vw, 2.6rem);
-      margin-bottom: 12px;
-    }
-
-    .memory-box p {
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    /* =========================================================
-       MAP
-       ========================================================= */
-
-    .map-section {
-      background: white;
-    }
-
-    .map-card {
-      background: var(--green-dark);
-      color: white;
-      border-radius: 27px;
-      padding: clamp(28px, 6vw, 50px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .map-card h2 {
-      font-size: clamp(1.7rem, 5vw, 2.5rem);
-      margin-bottom: 8px;
-    }
-
-    .map-address {
-      opacity: 0.78;
-    }
-
-    .map-button {
-      flex: 0 0 auto;
-      background: var(--gold);
-      color: #20170a;
-    }
-
-    /* =========================================================
-       PHOTO CONTRIBUTION
-       ========================================================= */
-
-    .contribute {
-      background: var(--cream);
-    }
-
-    .contribute-box {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      padding: 42px 25px;
-      border: 2px dashed #c9cbbf;
-      border-radius: 24px;
-    }
-
-    .contribute-box h2 {
-      color: var(--green-dark);
-      margin-bottom: 10px;
-    }
-
-    .contribute-box p {
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 22px;
-    }
-
-    /* =========================================================
-       LIGHTBOX
-       ========================================================= */
-
-    .lightbox {
-      position: fixed;
-      z-index: 3000;
-      inset: 0;
-      background: rgba(5,10,7,0.94);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      max-width: 95vw;
-      max-height: 88vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border-radius: 10px;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.1);
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    footer {
-      background: #10291c;
-      color: white;
-      padding: 48px 20px 25px;
-    }
-
-    .footer-grid {
-      max-width: 1120px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 35px;
-      padding-bottom: 30px;
-    }
-
-    .footer-brand {
-      font-size: 1.35rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .footer-tagline {
-      opacity: 0.65;
-      font-size: 0.88rem;
-    }
-
-    .footer-links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7px;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.72);
-      font-size: 0.86rem;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    .copyright {
-      max-width: 1120px;
-      margin: auto;
-      border-top: 1px solid rgba(255,255,255,0.10);
-      padding-top: 20px;
-      color: rgba(255,255,255,0.48);
-      font-size: 0.76rem;
-    }
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 800px) {
-
-      .navbar {
-        padding: 10px 13px;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 62px;
-        left: 12px;
-        right: 12px;
-        background: rgba(23,59,41,0.98);
-        border-radius: 17px;
-        padding: 8px;
-        box-shadow: 0 12px 35px rgba(0,0,0,0.2);
-      }
-
-      .nav-links.open {
-        display: grid;
-      }
-
-      .nav-links a {
-        padding: 12px 14px;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .slide-controls {
-        left: 10px;
-        right: 10px;
-      }
-
-      .slide-arrow {
-        width: 39px;
-        height: 39px;
-      }
-
-      section {
-        padding: 65px 15px;
-      }
-
-      .about-grid,
-      .youth-box {
-        grid-template-columns: 1fr;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 9px;
-      }
-
-      .gallery-item {
-        border-radius: 13px;
-      }
-
-      .map-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .map-button {
-        width: 100%;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .hero h1 {
-        font-size: 2.25rem;
-      }
-
-      .hero-subtitle {
-        font-size: 0.95rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons .btn {
-        width: 100%;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-text,
-      .info-card,
-      .card,
-      .youth-content {
-        padding: 23px;
-      }
-    }
-
-    /* Reduced motion accessibility */
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- =======================================================
-       NAVIGATION
-       ======================================================= -->
-
-  <header class="navbar" id="navbar">
-    <div class="nav-inner">
-
-      <a href=dharmabandh-jharkhand-omkar-mahato.jpg
+      margin-bottom
