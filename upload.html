@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>अपनी तस्वीर शेयर करें | धर्माबांध</title>
+<meta name="description" content="धर्माबांध की अपनी तस्वीर और यादें हमारे गाँव के साथ साझा करें।">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f3ec;color:#173b2a}
+.header{background:#174b32;color:#fff;padding:18px 20px;position:sticky;top:0;z-index:5}
+.header-inner{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:22px;font-weight:700}
+.lang{display:flex;background:#fff2;border-radius:30px;padding:3px}
+.lang button{border:0;background:transparent;color:#fff;padding:7px 11px;border-radius:20px;cursor:pointer}
+.lang button.active{background:#fff;color:#174b32}
+main{max-width:720px;margin:35px auto;padding:0 18px}
+.card{background:#fff;border-radius:22px;padding:28px;box-shadow:0 12px 35px #173b2a18}
+h1{margin:0 0 8px;font-size:32px}
+.sub{margin:0 0 25px;color:#65766b;line-height:1.6}
+label{display:block;font-weight:700;margin:18px 0 8px}
+input,textarea{width:100%;border:1px solid #d5ddd7;border-radius:12px;padding:13px;font-size:16px;background:#fff}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid #9bc4a9;border-color:#5d9972}
+.file-box{border:2px dashed #9bb9a5;border-radius:15px;padding:20px;text-align:center;background:#f7faf7}
+.file-box input{border:0;padding:0}
+.preview{display:none;width:100%;max-height:360px;object-fit:contain;border-radius:15px;margin-top:15px;background:#eee}
+button.submit{width:100%;border:0;border-radius:14px;padding:15px;margin-top:24px;background:#174b32;color:#fff;font-size:17px;font-weight:700;cursor:pointer}
+button.submit:disabled{opacity:.6;cursor:not-allowed}
+.msg{display:none;margin-top:18px;padding:13px;border-radius:12px;line-height:1.5}
+.success{background:#e5f5e9;color:#176132}
+.error{background:#fde9e7;color:#9b241b}
+.back{text-align:center;margin-top:20px}
+.back a{color:#174b32;font-weight:700;text-decoration:none}
+.small{font-size:13px;color:#738078;margin-top:10px;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="header-inner">
+<div class="logo">🌿 धर्माबांध</div>
+<div class="lang">
+<button id="hiBtn" class="active" type="button">हिन्दी</button>
+<button id="enBtn" type="button">English</button>
+</div>
+</div>
+</header>
+
+<main>
+<section class="card">
+<h1 id="title">अपनी तस्वीर शेयर करें</h1>
+<p class="sub" id="intro">अपने गाँव धर्माबांध की कोई खूबसूरत तस्वीर हमारे साथ साझा करें। आपकी तस्वीर समीक्षा के बाद वेबसाइट की गैलरी में दिखाई जा सकती है।</p>
+
+<form id="uploadForm">
+<label for="photo" id="photoLabel">📸 तस्वीर चुनें</label>
+<div class="file-box">
+<input id="photo" type="file" accept="image/jpeg,image/png,image/webp,image/gif" required>
+<div class="small" id="fileHelp">JPG, PNG, WEBP या GIF • अधिकतम 10 MB</div>
+<img id="preview" class="preview" alt="Photo preview">
+</div>
+
+<label for="name" id="nameLabel">👤 आपका नाम</label>
+<input id="name" type="text" maxlength="100" required placeholder="अपना नाम लिखें">
+
+<label for="caption" id="captionLabel">📝 तस्वीर के बारे में</label>
+<textarea id="caption" maxlength="500" placeholder="इस तस्वीर के बारे में कुछ लिखें (वैकल्पिक)"></textarea>
+
+<button class="submit" id="submitBtn" type="submit">📤 तस्वीर भेजें</button>
+<div id="success" class="msg success"></div>
+<div id="error" class="msg error"></div>
+</form>
+
+<div class="back"><a href="index.html" id="backText">← गाँव की वेबसाइट पर वापस जाएँ</a></div>
+</section>
+</main>
+
+<script>
+const SUPABASE_URL="https://oyznkdapiuytrvyudhef.supabase.co";
+const SUPABASE_KEY="sb_publishable_1XH7tv3LyF4kG_RJgPF_NQ_v48d8Nmv";
+const BUCKET="user-uploads";
+
+const form=document.getElementById("uploadForm");
+const photo=document.getElementById("photo");
+const preview=document.getElementById("preview");
+const submitBtn=document.getElementById("submitBtn");
+const success=document.getElementById("success");
+const errorBox=document.getElementById("error");
+
+photo.addEventListener("change",()=>{
+  const file=photo.files[0];
+  preview.style.display="none";
+  if(!file)return;
+  if(file.size>10*1024*1024){
+    showError("तस्वीर 10 MB से छोटी होनी चाहिए।");
+    photo.value="";
+    return;
+  }
+  preview.src=URL.createObjectURL(file);
+  preview.style.display="block";
+});
+
+function headers(extra={}){
+  return Object.assign({
+    "apikey":SUPABASE_KEY,
+    "Authorization":"Bearer "+SUPABASE_KEY
+  },extra);
+}
+
+function showError(msg){
+  errorBox.textContent=msg;
+  errorBox.style.display="block";
+  success.style.display="none";
+}
+function showSuccess(msg){
+  success.textContent=msg;
+  success.style.display="block";
+  errorBox.style.display="none";
+}
+
+form.addEventListener("submit",async(e)=>{
+  e.preventDefault();
+  success.style.display="none";
+  errorBox.style.display="none";
+
+  const file=photo.files[0];
+  const name=document.getElementById("name").value.trim();
+  const caption=document.getElementById("caption").value.trim();
+
+  if(!file||!name){
+    showError("कृपया तस्वीर और अपना नाम भरें।");
+    return;
+  }
+  if(file.size>10*1024*1024){
+    showError("तस्वीर 10 MB से छोटी होनी चाहिए।");
+    return;
+  }
+
+  submitBtn.disabled=true;
+  submitBtn.textContent="⏳ तस्वीर भेजी जा रही है...";
+
+  try{
+    const safeName=file.name.toLowerCase().replace(/[^a-z0-9._-]/g,"-");
+    const filePath=Date.now()+"-"+crypto.randomUUID()+"-"+safeName;
+
+    const uploadRes=await fetch(
+      SUPABASE_URL+"/storage/v1/object/"+BUCKET+"/"+encodeURIComponent(filePath),
+      {
+        method:"POST",
+        headers:headers({"Content-Type":file.type,"x-upsert":"false"}),
+        body:file
+      }
+    );
+
+    if(!uploadRes.ok){
+      const t=await uploadRes.text();
+      throw new Error("Photo upload failed: "+t);
+    }
+
+    const dbRes=await fetch(SUPABASE_URL+"/rest/v1/photo_submissions",{
+      method:"POST",
+      headers:headers({
+        "Content-Type":"application/json",
+        "Prefer":"return=minimal"
+      }),
+      body:JSON.stringify({
+        name:name,
+        caption:caption,
+        file_path:filePath,
+        status:"pending"
+      })
+    });
+
+    if(!dbRes.ok){
+      const t=await dbRes.text();
+      throw new Error("Database entry failed: "+t);
+    }
+
+    showSuccess("✅ आपकी तस्वीर सफलतापूर्वक भेज दी गई है। समीक्षा के बाद इसे गैलरी में दिखाया जा सकता है।");
+    form.reset();
+    preview.style.display="none";
+  }catch(err){
+    console.error(err);
+    showError("❌ तस्वीर भेजी नहीं जा सकी। कृपया दोबारा कोशिश करें।");
+  }finally{
+    submitBtn.disabled=false;
+    submitBtn.textContent="📤 तस्वीर भेजें";
+  }
+});
+
+function setLang(lang){
+  const en=lang==="en";
+  document.documentElement.lang=en?"en":"hi";
+  document.getElementById("hiBtn").classList.toggle("active",!en);
+  document.getElementById("enBtn").classList.toggle("active",en);
+
+  document.getElementById("title").textContent=en?"Share Your Photo":"अपनी तस्वीर शेयर करें";
+  document.getElementById("intro").textContent=en?
+    "Share a beautiful photo of Dharmabandh with our village community. Your photo may appear in the gallery after review.":
+    "अपने गाँव धर्माबांध की कोई खूबसूरत तस्वीर हमारे साथ साझा करें। आपकी तस्वीर समीक्षा के बाद वेबसाइट की गैलरी में दिखाई जा सकती है।";
+  document.getElementById("photoLabel").textContent=en?"📸 Choose Photo":"📸 तस्वीर चुनें";
+  document.getElementById("fileHelp").textContent=en?"JPG, PNG, WEBP or GIF • Maximum 10 MB":"JPG, PNG, WEBP या GIF • अधिकतम 10 MB";
+  document.getElementById("nameLabel").textContent=en?"👤 Your Name":"👤 आपका नाम";
+  document.getElementById("name").placeholder=en?"Enter your name":"अपना नाम लिखें";
+  document.getElementById("captionLabel").textContent=en?"📝 About the Photo":"📝 तस्वीर के बारे में";
+  document.getElementById("caption").placeholder=en?"Write something about this photo (optional)":"इस तस्वीर के बारे में कुछ लिखें (वैकल्पिक)";
+  document.getElementById("submitBtn").textContent=en?"📤 Submit Photo":"📤 तस्वीर भेजें";
+  document.getElementById("backText").textContent=en?"← Back to village website":"← गाँव की वेबसाइट पर वापस जाएँ";
+  localStorage.setItem("dharmabandh-upload-language",lang);
+}
+document.getElementById("hiBtn").onclick=()=>setLang("hi");
+document.getElementById("enBtn").onclick=()=>setLang("en");
+setLang(localStorage.getItem("dharmabandh-upload-language")||"hi");
+</script>
+</body>
+</html>
