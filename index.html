@@ -3,798 +3,2056 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>धर्माबांध | Dharmabandh — हमारा गाँव, हमारी पहचान</title>
+
 <meta name="description" content="धर्माबांध, धनबाद, झारखंड का डिजिटल गाँव पोर्टल। गाँव की तस्वीरें, यादें, कार्यक्रम, समुदाय और स्थान की जानकारी।">
+
 <meta name="keywords" content="Dharmabandh, धर्माबांध, Dhanbad, Jharkhand, village portal">
+
 <meta name="author" content="Dharmabandh Community">
+
 <link rel="canonical" href="https://dharmabandh.github.io/Dharmabandh/">
+
 <meta property="og:title" content="धर्माबांध | Dharmabandh">
 <meta property="og:description" content="हमारा गाँव • हमारी पहचान • हमारी यादें">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dharmabandh.github.io/Dharmabandh/">
+
 <style>
-:root{--green:#2f6b45;--green2:#1e4d31;--gold:#c89b3c;--cream:#f7f4ed;--ink:#1e2921;--muted:#667067;--white:#fff;--shadow:0 12px 35px rgba(26,45,31,.10);--radius:22px}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,"Noto Sans Devanagari","Segoe UI",sans-serif;background:var(--cream);color:var(--ink);line-height:1.65}
-a{text-decoration:none;color:inherit}
-button{font:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1120px,92%);margin:auto}
-.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 2px 18px rgba(0,0,0,.08)}
-.nav-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-weight:800;color:var(--green);font-size:1.05rem;display:flex;align-items:center;gap:7px}
-.nav-links{display:flex;gap:20px;align-items:center;font-size:.9rem;font-weight:700}
-.nav-links a{color:#374138;transition:.2s}
-.nav-links a:hover{color:var(--green)}
-.menu-btn{display:none;border:0;background:transparent;font-size:1.7rem;cursor:pointer;color:var(--green)}
-.hero{height:calc(100svh - 68px);min-height:560px;position:relative;overflow:hidden;background:#111}
-.slides{position:absolute;inset:0}
-.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1s ease;display:grid;place-items:center}
-.slide.active{opacity:1;visibility:visible}
-.slide-bg{position:absolute;inset:-25px;background-position:center;background-size:cover;filter:blur(22px);transform:scale(1.08);opacity:.72}
-.slide-bg:after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.18)}
-.slide img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center;filter:none}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),transparent 40%,rgba(0,0,0,.55));pointer-events:none}
-.hero-content{position:absolute;z-index:10;left:50%;bottom:12%;transform:translateX(-50%);width:min(900px,92%);text-align:center;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.7)}
-.hero-content h1{font-size:clamp(2rem,5vw,4.1rem);line-height:1.2;margin-bottom:10px;font-weight:900}
-.hero-content p{font-size:clamp(1rem,2vw,1.25rem)}
-.language-switcher{position:absolute;z-index:30;top:16px;left:50%;transform:translateX(-50%);display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(255,255,255,.96);box-shadow:0 8px 25px rgba(0,0,0,.22)}
-.lang-btn{border:0;border-radius:999px;padding:7px 14px;background:transparent;color:#304238;font-weight:800;cursor:pointer}
-.lang-btn.active{background:var(--green);color:#fff}
-.slider-btn{position:absolute;z-index:20;top:50%;transform:translateY(-50%);border:1px solid rgba(255,255,255,.45);background:rgba(0,0,0,.28);color:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:1.5rem}
-.prev{left:18px}.next{right:18px}
-.dots{position:absolute;z-index:20;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
-.dot{width:9px;height:9px;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer}
-.dot.active{background:#fff;transform:scale(1.25)}
-section{padding:76px 0}
-.section-head{text-align:center;max-width:760px;margin:0 auto 38px}
-.section-head h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.25;color:var(--green2);margin-bottom:9px}
-.section-head p{color:var(--muted)}
-.about{background:#fff}
-.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch}
-.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:30px}
-.about-copy{background:linear-gradient(145deg,#f3f7f1,#fff)}
-.about-copy p{margin-bottom:15px;color:#465149}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.stat{padding:18px;border-radius:17px;background:#f7f8f4;border:1px solid #e5eadf}
-.stat strong{display:block;color:var(--green);font-size:1.3rem}
-.stat span{font-size:.88rem;color:#687169}
-.note{margin-top:15px;font-size:.84rem;color:#777}
-.gallery{background:var(--cream)}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.gallery-item{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:18px;background:#ddd;cursor:pointer}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.gallery-item:hover img{transform:scale(1.05)}
-.gallery-empty{text-align:center;padding:45px;color:var(--muted)}
-.events{background:#fff}
-.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.event-card{padding:26px;border-radius:20px;background:#fafbf8;border:1px solid #e4e9e1;transition:.25s}
-.event-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.event-icon{font-size:2rem;margin-bottom:12px}
-.event-card h3{color:var(--green2);margin-bottom:7px}
-.event-card p{color:var(--muted);font-size:.94rem}
-.youth{background:linear-gradient(145deg,#edf4eb,#fff)}
-.youth-box{max-width:900px;margin:auto;text-align:center;background:#fff;padding:42px;border-radius:28px;box-shadow:var(--shadow)}
-.youth-box h2{color:var(--green2);font-size:2rem;margin-bottom:6px}
-.youth-box .tag{color:var(--gold);font-weight:800;margin-bottom:16px}
-.youth-box p{color:#58635a}
-.memories{background:var(--cream)}
-.memory-box{max-width:820px;margin:auto;text-align:center}
-.memory-box h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--green2)}
-.memory-box p{margin:14px auto 24px;color:var(--muted);max-width:680px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--green);color:#fff;padding:12px 20px;border-radius:999px;font-weight:800;border:0;cursor:pointer;transition:.2s}
-.btn:hover{background:var(--green2);transform:translateY(-1px)}
-.location{background:#fff}
-.map-card{max-width:850px;margin:auto;text-align:center;background:#f7f8f4;padding:35px;border-radius:24px}
-.map-card .pin{font-size:2.5rem}
-.map-address{font-weight:800;color:var(--green2);margin:10px 0 20px}
-footer{background:#183526;color:#fff;padding:42px 0 25px}
-.footer-inner{display:flex;justify-content:space-between;gap:25px;align-items:flex-start}
-.footer-brand{font-weight:900;font-size:1.1rem}
-.footer-brand p{font-weight:500;font-size:.9rem;opacity:.8;margin-top:5px}
-.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem;opacity:.9}
-.copy{text-align:center;border-top:1px solid rgba(255,255,255,.15);margin-top:28px;padding-top:20px;font-size:.82rem;opacity:.72}
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
-.lightbox.open{display:flex}
-.lightbox img{max-width:95vw;max-height:90vh;object-fit:contain}
-.close-lightbox{position:absolute;right:20px;top:15px;border:0;background:transparent;color:#fff;font-size:2.3rem;cursor:pointer}
+
+:root{
+  --green:#2f6b45;
+  --green2:#1e4d31;
+  --gold:#c89b3c;
+  --cream:#f7f4ed;
+  --ink:#1e2921;
+  --muted:#667067;
+  --white:#fff;
+  --shadow:0 12px 35px rgba(26,45,31,.10);
+  --radius:22px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:system-ui,-apple-system,"Noto Sans Devanagari","Segoe UI",sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.65;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  box-shadow:0 2px 18px rgba(0,0,0,.08);
+}
+
+.nav-inner{
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  font-weight:800;
+  color:var(--green);
+  font-size:1.05rem;
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  font-size:.9rem;
+  font-weight:700;
+}
+
+.nav-links a{
+  color:#374138;
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:var(--green);
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:1.7rem;
+  cursor:pointer;
+  color:var(--green);
+}
+
+.hero{
+  height:calc(100svh - 68px);
+  min-height:560px;
+  position:relative;
+  overflow:hidden;
+  background:#111;
+}
+
+.slides{
+  position:absolute;
+  inset:0;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity 1s ease;
+  display:grid;
+  place-items:center;
+}
+
+.slide.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.slide-bg{
+  position:absolute;
+  inset:-25px;
+  background-position:center;
+  background-size:cover;
+  filter:blur(22px);
+  transform:scale(1.08);
+  opacity:.72;
+}
+
+.slide-bg:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.18);
+}
+
+.slide img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  filter:none;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.28),
+    transparent 40%,
+    rgba(0,0,0,.55)
+  );
+  pointer-events:none;
+}
+
+.hero-content{
+  position:absolute;
+  z-index:10;
+  left:50%;
+  bottom:12%;
+  transform:translateX(-50%);
+  width:min(900px,92%);
+  text-align:center;
+  color:#fff;
+  text-shadow:0 3px 18px rgba(0,0,0,.7);
+}
+
+.hero-content h1{
+  font-size:clamp(2rem,5vw,4.1rem);
+  line-height:1.2;
+  margin-bottom:10px;
+  font-weight:900;
+}
+
+.hero-content p{
+  font-size:clamp(1rem,2vw,1.25rem);
+}
+
+.language-switcher{
+  position:absolute;
+  z-index:30;
+  top:16px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:4px;
+  padding:5px;
+  border-radius:999px;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 8px 25px rgba(0,0,0,.22);
+}
+
+.lang-btn{
+  border:0;
+  border-radius:999px;
+  padding:7px 14px;
+  background:transparent;
+  color:#304238;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.lang-btn.active{
+  background:var(--green);
+  color:#fff;
+}
+
+.slider-btn{
+  position:absolute;
+  z-index:20;
+  top:50%;
+  transform:translateY(-50%);
+  border:1px solid rgba(255,255,255,.45);
+  background:rgba(0,0,0,.28);
+  color:#fff;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:1.5rem;
+}
+
+.prev{
+  left:18px;
+}
+
+.next{
+  right:18px;
+}
+
+.dots{
+  position:absolute;
+  z-index:20;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:7px;
+}
+
+.dot{
+  width:9px;
+  height:9px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.55);
+  cursor:pointer;
+}
+
+.dot.active{
+  background:#fff;
+  transform:scale(1.25);
+}
+
+section{
+  padding:76px 0;
+}
+
+.section-head{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 38px;
+}
+
+.section-head h2{
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  line-height:1.25;
+  color:var(--green2);
+  margin-bottom:9px;
+}
+
+.section-head p{
+  color:var(--muted);
+}
+
+.about{
+  background:#fff;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:28px;
+  align-items:stretch;
+}
+
+.card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:30px;
+}
+
+.about-copy{
+  background:linear-gradient(145deg,#f3f7f1,#fff);
+}
+
+.about-copy p{
+  margin-bottom:15px;
+  color:#465149;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.stat{
+  padding:18px;
+  border-radius:17px;
+  background:#f7f8f4;
+  border:1px solid #e5eadf;
+}
+
+.stat strong{
+  display:block;
+  color:var(--green);
+  font-size:1.3rem;
+}
+
+.stat span{
+  font-size:.88rem;
+  color:#687169;
+}
+
+.note{
+  margin-top:15px;
+  font-size:.84rem;
+  color:#777;
+}
+
+.gallery{
+  background:var(--cream);
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.gallery-item{
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  border-radius:18px;
+  background:#ddd;
+  cursor:pointer;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .4s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.05);
+}
+
+.gallery-empty{
+  text-align:center;
+  padding:45px;
+  color:var(--muted);
+}
+
+.events{
+  background:#fff;
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.event-card{
+  padding:26px;
+  border-radius:20px;
+  background:#fafbf8;
+  border:1px solid #e4e9e1;
+  transition:.25s;
+}
+
+.event-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+.event-icon{
+  font-size:2rem;
+  margin-bottom:12px;
+}
+
+.event-card h3{
+  color:var(--green2);
+  margin-bottom:7px;
+}
+
+.event-card p{
+  color:var(--muted);
+  font-size:.94rem;
+}
+
+.youth{
+  background:linear-gradient(145deg,#edf4eb,#fff);
+}
+
+.youth-box{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  background:#fff;
+  padding:42px;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+}
+
+.youth-box h2{
+  color:var(--green2);
+  font-size:2rem;
+  margin-bottom:6px;
+}
+
+.youth-box .tag{
+  color:var(--gold);
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+.youth-box p{
+  color:#58635a;
+}
+
+.memories{
+  background:var(--cream);
+}
+
+.memory-box{
+  max-width:820px;
+  margin:auto;
+  text-align:center;
+}
+
+.memory-box h2{
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  color:var(--green2);
+}
+
+.memory-box p{
+  margin:14px auto 24px;
+  color:var(--muted);
+  max-width:680px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  background:var(--green);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:999px;
+  font-weight:800;
+  border:0;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.btn:hover{
+  background:var(--green2);
+  transform:translateY(-1px);
+}
+
+.location{
+  background:#fff;
+}
+
+.map-card{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  background:#f7f8f4;
+  padding:35px;
+  border-radius:24px;
+}
+
+.map-card .pin{
+  font-size:2.5rem;
+}
+
+.map-address{
+  font-weight:800;
+  color:var(--green2);
+  margin:10px 0 20px;
+}
+
+footer{
+  background:#183526;
+  color:#fff;
+  padding:42px 0 25px;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  align-items:flex-start;
+}
+
+.footer-brand{
+  font-weight:900;
+  font-size:1.1rem;
+}
+
+.footer-brand p{
+  font-weight:500;
+  font-size:.9rem;
+  opacity:.8;
+  margin-top:5px;
+}
+
+.footer-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  font-size:.9rem;
+  opacity:.9;
+}
+
+.copy{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.15);
+  margin-top:28px;
+  padding-top:20px;
+  font-size:.82rem;
+  opacity:.72;
+}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  z-index:300;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.lightbox.open{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:95vw;
+  max-height:90vh;
+  object-fit:contain;
+}
+
+.close-lightbox{
+  position:absolute;
+  right:20px;
+  top:15px;
+  border:0;
+  background:transparent;
+  color:#fff;
+  font-size:2.3rem;
+  cursor:pointer;
+}
+
 @media(max-width:800px){
-.nav-inner{height:60px}.menu-btn{display:block}.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:#fff;padding:14px 4%;flex-direction:column;align-items:flex-start;box-shadow:0 12px 20px rgba(0,0,0,.08)}
-.nav-links.open{display:flex}.hero{height:calc(100svh - 60px);min-height:500px}.language-switcher{top:12px}.hero-content{bottom:11%}.slider-btn{width:40px;height:40px}.about-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.event-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column}
+
+  .nav-inner{
+    height:60px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:60px;
+    left:0;
+    right:0;
+    background:#fff;
+    padding:14px 4%;
+    flex-direction:column;
+    align-items:flex-start;
+    box-shadow:0 12px 20px rgba(0,0,0,.08);
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .hero{
+    height:calc(100svh - 60px);
+    min-height:500px;
+  }
+
+  .language-switcher{
+    top:12px;
+  }
+
+  .hero-content{
+    bottom:11%;
+  }
+
+  .slider-btn{
+    width:40px;
+    height:40px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .event-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+  }
 }
+
 @media(max-width:480px){
-.container{width:94%}section{padding:58px 0}.stats{grid-template-columns:1fr 1fr}.gallery-grid{gap:10px}.hero-content h1{font-size:2rem}.hero-content p{font-size:.9rem}.card{padding:22px}.youth-box{padding:28px 20px}
+
+  .container{
+    width:94%;
+  }
+
+  section{
+    padding:58px 0;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery-grid{
+    gap:10px;
+  }
+
+  .hero-content h1{
+    font-size:2rem;
+  }
+
+  .hero-content p{
+    font-size:.9rem;
+  }
+
+  .card{
+    padding:22px;
+  }
+
+  .youth-box{
+    padding:28px 20px;
+  }
 }
+
 </style>
 </head>
+
 <body>
+
 <nav class="nav">
+
 <div class="container nav-inner">
-<a class="brand" href="#home">🌿 <span data-hi="धर्माबांध" data-en="Dharmabandh">धर्माबांध</span></a>
-<button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
-<div class="nav-links" id="navLinks">
-<a href="#home" data-hi="होम" data-en="Home">होम</a>
-<a href="#about" data-hi="हमारा गाँव" data-en="Our Village">हमारा गाँव</a>
-<a href="#gallery" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
-<a href="#events" data-hi="कार्यक्रम" data-en="Events">कार्यक्रम</a>
-<a href="#community" data-hi="समुदाय" data-en="Community">समुदाय</a>
-<a href="#location" data-hi="स्थान" data-en="Location">स्थान</a>
+
+<a class="brand" href="#home">
+🌿
+<span
+data-hi="धर्माबांध"
+data-en="Dharmabandh">
+धर्माबांध
+</span>
+</a>
+
+<button
+class="menu-btn"
+id="menuBtn"
+aria-label="Menu">
+☰
+</button>
+
+<div
+class="nav-links"
+id="navLinks">
+
+<a href="#home"
+data-hi="होम"
+data-en="Home">
+होम
+</a>
+
+<a href="#about"
+data-hi="हमारा गाँव"
+data-en="Our Village">
+हमारा गाँव
+</a>
+
+<a href="#gallery"
+data-hi="गैलरी"
+data-en="Gallery">
+गैलरी
+</a>
+
+<a href="#events"
+data-hi="कार्यक्रम"
+data-en="Events">
+कार्यक्रम
+</a>
+
+<a href="#community"
+data-hi="समुदाय"
+data-en="Community">
+समुदाय
+</a>
+
+<a href="#location"
+data-hi="स्थान"
+data-en="Location">
+स्थान
+</a>
+
 </div>
+
 </div>
+
 </nav>
+
+
 <main id="home">
-<section class="hero" aria-label="Dharmabandh slideshow">
-<div class="language-switcher" aria-label="Language selection">
-<button class="lang-btn active" id="langHi" type="button">हिन्दी</button>
-<button class="lang-btn" id="langEn" type="button">English</button>
+
+<section
+class="hero"
+aria-label="Dharmabandh slideshow">
+
+<div
+class="language-switcher"
+aria-label="Language selection">
+
+<button
+class="lang-btn active"
+id="langHi"
+type="button">
+हिन्दी
+</button>
+
+<button
+class="lang-btn"
+id="langEn"
+type="button">
+English
+</button>
+
 </div>
-<div class="slides" id="slides"></div>
-<button class="slider-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
-<button class="slider-btn next" id="nextBtn" aria-label="Next slide">›</button>
-<div class="dots" id="dots" aria-label="Slide navigation"></div>
+
+<div
+class="slides"
+id="slides">
+</div>
+
+<button
+class="slider-btn prev"
+id="prevBtn"
+aria-label="Previous slide">
+‹
+</button>
+
+<button
+class="slider-btn next"
+id="nextBtn"
+aria-label="Next slide">
+›
+</button>
+
+<div
+class="dots"
+id="dots"
+aria-label="Slide navigation">
+</div>
+
 <div class="hero-content">
-<h1 data-hi="धर्माबांध में आपका स्वागत है" data-en="Welcome to Dharmabandh">धर्माबांध में आपका स्वागत है</h1>
-<p data-hi="हमारा गाँव • हमारी पहचान • हमारी यादें" data-en="Our Village • Our Identity • Our Memories">हमारा गाँव • हमारी पहचान • हमारी यादें</p>
+
+<h1
+data-hi="धर्माबांध में आपका स्वागत है"
+data-en="Welcome to Dharmabandh">
+धर्माबांध में आपका स्वागत है
+</h1>
+
+<p
+data-hi="हमारा गाँव • हमारी पहचान • हमारी यादें"
+data-en="Our Village • Our Identity • Our Memories">
+हमारा गाँव • हमारी पहचान • हमारी यादें
+</p>
+
 </div>
+
 </section>
-<section class="about" id="about">
+
+
+<section
+class="about"
+id="about">
+
 <div class="container">
-<div class="section-head"><h2 data-hi="हमारा गाँव" data-en="Our Village">हमारा गाँव</h2><p data-hi="धर्माबांध की पहचान और सार्वजनिक रूप से उपलब्ध जनगणना जानकारी" data-en="Dharmabandh’s identity and publicly available census information">धर्माबांध की पहचान और सार्वजनिक रूप से उपलब्ध जनगणना जानकारी</p></div>
+
+<div class="section-head">
+
+<h2
+data-hi="हमारा गाँव"
+data-en="Our Village">
+हमारा गाँव
+</h2>
+
+<p
+data-hi="धर्माबांध की पहचान और सार्वजनिक रूप से उपलब्ध जनगणना जानकारी"
+data-en="Dharmabandh’s identity and publicly available census information">
+धर्माबांध की पहचान और सार्वजनिक रूप से उपलब्ध जनगणना जानकारी
+</p>
+
+</div>
+
+
 <div class="about-grid">
+
 <div class="card about-copy">
-<p data-hi="धर्माबांध हमारा गाँव है—जहाँ हमारी जड़ें, रिश्ते, यादें और भविष्य जुड़े हैं। यह पोर्टल गाँव की तस्वीरों, यादों, कार्यक्रमों और समुदाय से जुड़ी जानकारी को एक जगह संजोने के लिए बनाया गया है।" data-en="Dharmabandh is our village—where our roots, relationships, memories and future come together. This portal brings village photos, memories, events and community information together in one place.">धर्माबांध हमारा गाँव है—जहाँ हमारी जड़ें, रिश्ते, यादें और भविष्य जुड़े हैं। यह पोर्टल गाँव की तस्वीरों, यादों, कार्यक्रमों और समुदाय से जुड़ी जानकारी को एक जगह संजोने के लिए बनाया गया है।</p>
-<p data-hi="हमारा उद्देश्य गाँव की डिजिटल पहचान को सरल, सुंदर और आने वाली पीढ़ियों के लिए उपयोगी बनाना है।" data-en="Our goal is to build a simple, beautiful digital identity for the village that remains useful for future generations.">हमारा उद्देश्य गाँव की डिजिटल पहचान को सरल, सुंदर और आने वाली पीढ़ियों के लिए उपयोगी बनाना है।</p>
+
+<p
+data-hi="धर्माबांध हमारा गाँव है—जहाँ हमारी जड़ें, रिश्ते, यादें और भविष्य जुड़े हैं। यह पोर्टल गाँव की तस्वीरों, यादों, कार्यक्रमों और समुदाय से जुड़ी जानकारी को एक जगह संजोने के लिए बनाया गया है।"
+data-en="Dharmabandh is our village—where our roots, relationships, memories and future come together. This portal brings village photos, memories, events and community information together in one place.">
+धर्माबांध हमारा गाँव है—जहाँ हमारी जड़ें, रिश्ते, यादें और भविष्य जुड़े हैं। यह पोर्टल गाँव की तस्वीरों, यादों, कार्यक्रमों और समुदाय से जुड़ी जानकारी को एक जगह संजोने के लिए बनाया गया है।
+</p>
+
+<p
+data-hi="हमारा उद्देश्य गाँव की डिजिटल पहचान को सरल, सुंदर और आने वाली पीढ़ियों के लिए उपयोगी बनाना है।"
+data-en="Our goal is to build a simple, beautiful digital identity for the village that remains useful for future generations.">
+हमारा उद्देश्य गाँव की डिजिटल पहचान को सरल, सुंदर और आने वाली पीढ़ियों के लिए उपयोगी बनाना है।
+</p>
+
 </div>
+
+
 <div class="card">
+
 <div class="stats">
-<div class="stat"><strong data-hi="धर्माबांध, धनबाद, झारखंड, भारत" data-en="Dharmabandh, Dhanbad, Jharkhand, India">धर्माबांध, धनबाद, झारखंड, भारत</strong><span data-hi="स्थान" data-en="Location">स्थान</span></div>
-<div class="stat"><strong data-hi="828304" data-en="828304">828304</strong><span data-hi="पिन कोड" data-en="PIN Code">पिन कोड</span></div>
-<div class="stat"><strong data-hi="2,635" data-en="2,635">2,635</strong><span data-hi="जनसंख्या" data-en="Population">जनसंख्या</span></div>
-<div class="stat"><strong data-hi="489" data-en="489">489</strong><span data-hi="परिवार" data-en="Households">परिवार</span></div>
-<div class="stat"><strong data-hi="1,371" data-en="1,371">1,371</strong><span data-hi="पुरुष" data-en="Male">पुरुष</span></div>
-<div class="stat"><strong data-hi="1,264" data-en="1,264">1,264</strong><span data-hi="महिला" data-en="Female">महिला</span></div>
-<div class="stat"><strong data-hi="220.25 hectares" data-en="220.25 hectares">220.25 hectares</strong><span data-hi="क्षेत्रफल" data-en="Area">क्षेत्रफल</span></div>
-<div class="stat"><strong data-hi="लगभग 68.8%" data-en="Approx. 68.8%">लगभग 68.8%</strong><span data-hi="साक्षरता" data-en="Literacy">साक्षरता</span></div>
-<div class="stat"><strong data-hi="361542" data-en="361542">361542</strong><span data-hi="गाँव कोड" data-en="Census Village Code">गाँव कोड</span></div>
+
+<div class="stat">
+<strong>धर्माबांध, धनबाद, झारखंड, भारत</strong>
+<span>स्थान</span>
 </div>
-<p class="note" data-hi="नोट: ऊपर दिए गए जनसांख्यिकीय आँकड़े Census 2011 के ऐतिहासिक/सार्वजनिक रिकॉर्ड हैं।" data-en="Note: The demographic figures above are historical/public-record figures from Census 2011.">नोट: ऊपर दिए गए जनसांख्यिकीय आँकड़े Census 2011 के ऐतिहासिक/सार्वजनिक रिकॉर्ड हैं।</p>
+
+<div class="stat">
+<strong>828304</strong>
+<span>पिन कोड</span>
 </div>
+
+<div class="stat">
+<strong>2,635</strong>
+<span>जनसंख्या</span>
 </div>
+
+<div class="stat">
+<strong>489</strong>
+<span>परिवार</span>
 </div>
+
+<div class="stat">
+<strong>1,371</strong>
+<span>पुरुष</span>
+</div>
+
+<div class="stat">
+<strong>1,264</strong>
+<span>महिला</span>
+</div>
+
+<div class="stat">
+<strong>220.25 hectares</strong>
+<span>क्षेत्रफल</span>
+</div>
+
+<div class="stat">
+<strong>लगभग 68.8%</strong>
+<span>साक्षरता</span>
+</div>
+
+<div class="stat">
+<strong>361542</strong>
+<span>गाँव कोड</span>
+</div>
+
+</div>
+
+<p class="note">
+नोट: ऊपर दिए गए जनसांख्यिकीय आँकड़े Census 2011 के ऐतिहासिक/सार्वजनिक रिकॉर्ड हैं।
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
-<section class="gallery" id="gallery">
+
+
+<section
+class="gallery"
+id="gallery">
+
 <div class="container">
-<div class="section-head"><h2 data-hi="धर्माबांध की तस्वीरें" data-en="Photos of Dharmabandh">धर्माबांध की तस्वीरें</h2><p data-hi="हमारे गाँव की खूबसूरत यादें" data-en="Beautiful memories of our village">हमारे गाँव की खूबसूरत यादें</p></div>
-<div class="gallery-grid" id="galleryGrid"><div class="gallery-empty" style="grid-column:1/-1" data-hi="तस्वीरें लोड हो रही हैं…" data-en="Loading photos…">तस्वीरें लोड हो रही हैं…</div></div>
+
+<div class="section-head">
+
+<h2
+data-hi="धर्माबांध की तस्वीरें"
+data-en="Photos of Dharmabandh">
+धर्माबांध की तस्वीरें
+</h2>
+
+<p
+data-hi="हमारे गाँव की खूबसूरत यादें"
+data-en="Beautiful memories of our village">
+हमारे गाँव की खूबसूरत यादें
+</p>
+
 </div>
+
+<div
+class="gallery-grid"
+id="galleryGrid">
+
+<div
+class="gallery-empty"
+style="grid-column:1/-1">
+
+तस्वीरें लोड हो रही हैं…
+
+</div>
+
+</div>
+
+</div>
+
 </section>
-<section class="events" id="events">
+
+
+<section
+class="events"
+id="events">
+
 <div class="container">
-<div class="section-head"><h2 data-hi="कार्यक्रम और सूचनाएँ" data-en="Events & Notices">कार्यक्रम और सूचनाएँ</h2><p data-hi="गाँव से जुड़ी जानकारी को आसानी से अपडेट करने के लिए स्थान" data-en="A simple place for village information and updates">गाँव से जुड़ी जानकारी को आसानी से अपडेट करने के लिए स्थान</p></div>
+
+<div class="section-head">
+
+<h2>कार्यक्रम और सूचनाएँ</h2>
+
+<p>
+गाँव से जुड़ी जानकारी को आसानी से अपडेट करने के लिए स्थान
+</p>
+
+</div>
+
 <div class="event-grid">
-<article class="event-card"><div class="event-icon">🎉</div><h3 data-hi="गाँव के त्योहार" data-en="Village Festivals">गाँव के त्योहार</h3><p data-hi="यहाँ वास्तविक त्योहारों और कार्यक्रमों की जानकारी जोड़ी जा सकती है।" data-en="Real village information can be added here. वास्तविक त्योहारों और कार्यक्रमों की जानकारी जोड़ी जा सकती है।">यहाँ वास्तविक त्योहारों और कार्यक्रमों की जानकारी जोड़ी जा सकती है।</p></article>
-<article class="event-card"><div class="event-icon">🏏</div><h3 data-hi="युवा गतिविधियाँ" data-en="Youth Activities">युवा गतिविधियाँ</h3><p data-hi="यहाँ वास्तविक युवा गतिविधियों और आयोजनों की जानकारी जोड़ी जा सकती है।" data-en="Real village information can be added here. वास्तविक युवा गतिविधियों और आयोजनों की जानकारी जोड़ी जा सकती है।">यहाँ वास्तविक युवा गतिविधियों और आयोजनों की जानकारी जोड़ी जा सकती है।</p></article>
-<article class="event-card"><div class="event-icon">📢</div><h3 data-hi="नोटिस बोर्ड" data-en="Notice Board">नोटिस बोर्ड</h3><p data-hi="यहाँ वास्तविक गाँव की सूचनाएँ और घोषणाएँ जोड़ी जा सकती हैं।" data-en="Real village information can be added here. वास्तविक गाँव की सूचनाएँ और घोषणाएँ जोड़ी जा सकती हैं।">यहाँ वास्तविक गाँव की सूचनाएँ और घोषणाएँ जोड़ी जा सकती हैं।</p></article>
+
+<article class="event-card">
+
+<div class="event-icon">
+🎉
 </div>
+
+<h3>
+गाँव के त्योहार
+</h3>
+
+<p>
+यहाँ वास्तविक त्योहारों और कार्यक्रमों की जानकारी जोड़ी जा सकती है।
+</p>
+
+</article>
+
+
+<article class="event-card">
+
+<div class="event-icon">
+🏏
 </div>
+
+<h3>
+युवा गतिविधियाँ
+</h3>
+
+<p>
+यहाँ वास्तविक युवा गतिविधियों और आयोजनों की जानकारी जोड़ी जा सकती है।
+</p>
+
+</article>
+
+
+<article class="event-card">
+
+<div class="event-icon">
+📢
+</div>
+
+<h3>
+नोटिस बोर्ड
+</h3>
+
+<p>
+यहाँ वास्तविक गाँव की सूचनाएँ और घोषणाएँ जोड़ी जा सकती हैं।
+</p>
+
+</article>
+
+</div>
+
+</div>
+
 </section>
-<section class="youth" id="community">
+
+
+<section
+class="youth"
+id="community">
+
 <div class="container">
+
 <div class="youth-box">
-<h2 data-hi="नवयुवक संघ समिति धर्माबांध" data-en="Dharmabandh Youth Committee">नवयुवक संघ समिति धर्माबांध</h2>
-<div class="tag" data-hi="युवा शक्ति • गाँव की प्रगति" data-en="Youth Power • Village Progress">युवा शक्ति • गाँव की प्रगति</div>
-<p data-hi="युवा गाँव की ऊर्जा और भविष्य की महत्वपूर्ण शक्ति हैं। इस स्थान पर वास्तविक सदस्यों, गतिविधियों, उपलब्धियों और तस्वीरों की जानकारी भविष्य में जोड़ी जा सकती है।" data-en="Young people are an important source of energy and a key part of the village’s future. Real member details, activities, achievements and photos can be added here in the future.">युवा गाँव की ऊर्जा और भविष्य की महत्वपूर्ण शक्ति हैं। इस स्थान पर वास्तविक सदस्यों, गतिविधियों, उपलब्धियों और तस्वीरों की जानकारी भविष्य में जोड़ी जा सकती है।</p>
+
+<h2>
+नवयुवक संघ समिति धर्माबांध
+</h2>
+
+<div class="tag">
+युवा शक्ति • गाँव की प्रगति
 </div>
+
+<p>
+युवा गाँव की ऊर्जा और भविष्य की महत्वपूर्ण शक्ति हैं। इस स्थान पर वास्तविक सदस्यों, गतिविधियों, उपलब्धियों और तस्वीरों की जानकारी भविष्य में जोड़ी जा सकती है।
+</p>
+
 </div>
+
+</div>
+
 </section>
+
+
 <section class="memories">
+
 <div class="container memory-box">
-<h2 data-hi="धर्माबांध की यादें" data-en="Memories of Dharmabandh">धर्माबांध की यादें</h2>
-<p data-hi="आज की फोटो, कल की याद। अपने गाँव की कोई खूबसूरत तस्वीर हमारे साथ साझा करें और धर्माबांध की डिजिटल यादों को आगे बढ़ाएँ।" data-en="Today’s photo, tomorrow’s memory. Share a beautiful photo of our village and help preserve Dharmabandh’s digital memories for the future.">आज की फोटो, कल की याद। अपने गाँव की कोई खूबसूरत तस्वीर हमारे साथ साझा करें और धर्माबांध की डिजिटल यादों को आगे बढ़ाएँ।</p>
-<a class="btn" href="upload.html">📸 <span data-hi="फोटो शेयर करें" data-en="Share a Photo">फोटो शेयर करें</span></a>
+
+<h2>
+धर्माबांध की यादें
+</h2>
+
+<p>
+आज की फोटो, कल की याद। अपने गाँव की कोई खूबसूरत तस्वीर हमारे साथ साझा करें और धर्माबांध की डिजिटल यादों को आगे बढ़ाएँ।
+</p>
+
+<a
+class="btn"
+href="upload.html">
+
+📸
+<span>
+फोटो शेयर करें
+</span>
+
+</a>
+
 </div>
+
 </section>
-<section class="location" id="location">
+
+
+<section
+class="location"
+id="location">
+
 <div class="container">
-<div class="section-head"><h2 data-hi="धर्माबांध का स्थान" data-en="Dharmabandh Location">धर्माबांध का स्थान</h2><p data-hi="Google Maps पर गाँव का स्थान देखें" data-en="View the village location on Google Maps">Google Maps पर गाँव का स्थान देखें</p></div>
+
+<div class="section-head">
+
+<h2>
+धर्माबांध का स्थान
+</h2>
+
+<p>
+Google Maps पर गाँव का स्थान देखें
+</p>
+
+</div>
+
 <div class="map-card">
-<div class="pin">📍</div>
-<div class="map-address" data-hi="धर्माबांध, धनबाद, झारखंड, भारत — 828304" data-en="Dharmabandh, Dhanbad, Jharkhand, India — 828304">धर्माबांध, धनबाद, झारखंड, भारत — 828304</div>
-<a class="btn" href="https://maps.app.goo.gl/JfcoojipwWSdz7aG7?g_st=ac" target="_blank" rel="noopener">📍 <span data-hi="Google Maps पर देखें" data-en="View on Google Maps">Google Maps पर देखें</span></a>
+
+<div class="pin">
+📍
 </div>
+
+<div class="map-address">
+धर्माबांध, धनबाद, झारखंड, भारत — 828304
 </div>
+
+<a
+class="btn"
+href="https://maps.app.goo.gl/JfcoojipwWSdz7aG7?g_st=ac"
+target="_blank"
+rel="noopener">
+
+📍
+<span>
+Google Maps पर देखें
+</span>
+
+</a>
+
+</div>
+
+</div>
+
 </section>
+
 </main>
+
+
 <footer>
+
 <div class="container">
+
 <div class="footer-inner">
-<div class="footer-brand">🌿 धर्माबांध<p data-hi="हमारा गाँव • हमारी पहचान" data-en="Our Village • Our Identity">हमारा गाँव • हमारी पहचान</p></div>
+
+<div class="footer-brand">
+
+🌿 धर्माबांध
+
+<p>
+हमारा गाँव • हमारी पहचान
+</p>
+
+</div>
+
 <div class="footer-links">
-<a href="#home" data-hi="होम" data-en="Home">होम</a>
-<a href="#about" data-hi="हमारा गाँव" data-en="Our Village">हमारा गाँव</a>
-<a href="#gallery" data-hi="गैलरी" data-en="Gallery">गैलरी</a>
-<a href="#events" data-hi="कार्यक्रम" data-en="Events">कार्यक्रम</a>
-<a href="#community" data-hi="समुदाय" data-en="Community">समुदाय</a>
-<a href="#location" data-hi="स्थान" data-en="Location">स्थान</a>
+
+<a href="#home">होम</a>
+<a href="#about">हमारा गाँव</a>
+<a href="#gallery">गैलरी</a>
+<a href="#events">कार्यक्रम</a>
+<a href="#community">समुदाय</a>
+<a href="#location">स्थान</a>
+
 </div>
+
 </div>
-<div class="copy">© 2026 Dharmabandh Community Portal</div>
+
+<div class="copy">
+© 2026 Dharmabandh Community Portal
 </div>
+
+</div>
+
 </footer>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true"><button class="close-lightbox" id="closeLightbox" aria-label="Close">×</button><img id="lightboxImg" src="" alt=""></div>
+
+
+<div
+class="lightbox"
+id="lightbox"
+role="dialog"
+aria-modal="true">
+
+<button
+class="close-lightbox"
+id="closeLightbox"
+aria-label="Close">
+×
+</button>
+
+<img
+id="lightboxImg"
+src=""
+alt="">
+
+</div>
+
+
 <script>
-const API="https://api.github.com/repos/dharmabandh/Dharmabandh/contents/images";
-const ROOT=["dharmabandh-jharkhand-omkar-mahato.jpg.jpg","dharmabandh-jharkhand-omkar-mahato.jpg"];
-let images=[],current=0,timer=null,language=localStorage.getItem("dharmabandh-language")||"hi";
-const slides=document.getElementById("slides"),dots=document.getElementById("dots"),gallery=document.getElementById("galleryGrid");
-const langHi=document.getElementById("langHi"),langEn=document.getElementById("langEn");
+
+/* =========================================================
+   GITHUB PHOTOS
+========================================================= */
+
+const GITHUB_API =
+"https://api.github.com/repos/dharmabandh/Dharmabandh/contents/images";
+
+const GITHUB_ROOT = [
+  "dharmabandh-jharkhand-omkar-mahato.jpg.jpg",
+  "dharmabandh-jharkhand-omkar-mahato.jpg"
+];
+
+
+/* =========================================================
+   SUPABASE
+========================================================= */
+
+const SUPABASE_URL =
+"https://oyznkdapiuytrvyudhef.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_1XH7tv3LyF4kG_RJgPF_NQ_v48d8Nmv";
+
+const SUPABASE_BUCKET =
+"user-uploads";
+
+
+/* =========================================================
+   SLIDESHOW SETTINGS
+   4000 = 4 seconds
+========================================================= */
+
+const SLIDE_TIME =
+4000;
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let images = [];
+let current = 0;
+let timer = null;
+
+let language =
+localStorage.getItem("dharmabandh-language") || "hi";
+
+
+const slides =
+document.getElementById("slides");
+
+const dots =
+document.getElementById("dots");
+
+const gallery =
+document.getElementById("galleryGrid");
+
+const langHi =
+document.getElementById("langHi");
+
+const langEn =
+document.getElementById("langEn");
+
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
 function setLanguage(lang){
- language=lang==="en"?"en":"hi";
- document.documentElement.lang=language;
- document.querySelectorAll("[data-hi][data-en]").forEach(el=>{el.textContent=language==="en"?el.dataset.en:el.dataset.hi});
- langHi.classList.toggle("active",language==="hi");
- langEn.classList.toggle("active",language==="en");
- localStorage.setItem("dharmabandh-language",language);
+
+  language =
+  lang === "en" ? "en" : "hi";
+
+  document.documentElement.lang =
+  language;
+
+  document
+  .querySelectorAll("[data-hi][data-en]")
+  .forEach(el => {
+
+    el.textContent =
+    language === "en"
+      ? el.dataset.en
+      : el.dataset.hi;
+
+  });
+
+  langHi.classList.toggle(
+    "active",
+    language === "hi"
+  );
+
+  langEn.classList.toggle(
+    "active",
+    language === "en"
+  );
+
+  localStorage.setItem(
+    "dharmabandh-language",
+    language
+  );
+
 }
-langHi.addEventListener("click",()=>setLanguage("hi"));
-langEn.addEventListener("click",()=>setLanguage("en"));
+
+
+langHi.addEventListener(
+  "click",
+  () => setLanguage("hi")
+);
+
+langEn.addEventListener(
+  "click",
+  () => setLanguage("en")
+);
+
 setLanguage(language);
-function unique(a){return [...new Set(a)]}
-function imageUrl(name){return "https://raw.githubusercontent.com/dharmabandh/Dharmabandh/main/images/"+encodeURIComponent(name)}
-function makeSlide(src,i){
- const el=document.createElement("div");el.className="slide"+(i===0?" active":"");
- const bg=document.createElement("div");bg.className="slide-bg";bg.style.backgroundImage=`url("${src}")`;
- const im=document.createElement("img");im.src=src;im.alt=`Dharmabandh village photo ${i+1}`;im.loading=i===0?"eager":"lazy";
- el.append(bg,im);return el;
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function unique(array){
+
+  return [
+    ...new Set(array)
+  ];
+
 }
+
+
+function githubImageUrl(name){
+
+  return (
+    "https://raw.githubusercontent.com/" +
+    "dharmabandh/Dharmabandh/main/images/" +
+    encodeURIComponent(name)
+  );
+
+}
+
+
+function supabaseImageUrl(path){
+
+  return (
+    SUPABASE_URL +
+    "/storage/v1/object/public/" +
+    SUPABASE_BUCKET +
+    "/" +
+    path
+    .split("/")
+    .map(part => encodeURIComponent(part))
+    .join("/")
+  );
+
+}
+
+
+/* =========================================================
+   SLIDES
+========================================================= */
+
+function makeSlide(src,index){
+
+  const el =
+  document.createElement("div");
+
+  el.className =
+  "slide" +
+  (index === 0 ? " active" : "");
+
+
+  const bg =
+  document.createElement("div");
+
+  bg.className =
+  "slide-bg";
+
+  bg.style.backgroundImage =
+  `url("${src}")`;
+
+
+  const img =
+  document.createElement("img");
+
+  img.src =
+  src;
+
+  img.alt =
+  `Dharmabandh village photo ${index + 1}`;
+
+  img.loading =
+  index === 0
+    ? "eager"
+    : "lazy";
+
+
+  el.appendChild(bg);
+
+  el.appendChild(img);
+
+  return el;
+
+}
+
+
 function renderSlides(){
- slides.innerHTML="";dots.innerHTML="";
- images.forEach((src,i)=>{
-  slides.appendChild(makeSlide(src,i));
-  const d=document.createElement("button");d.className="dot"+(i===0?" active":"");d.setAttribute("aria-label",`Slide ${i+1}`);d.onclick=()=>showSlide(i);dots.appendChild(d);
- });
- if(images.length>1)startTimer();
-}
-function showSlide(n){
- if(!images.length)return;
- const els=slides.children;
- current=(n+images.length)%images.length;
- [...els].forEach((el,i)=>el.classList.toggle("active",i===current));
- [...dots.children].forEach((d,i)=>d.classList.toggle("active",i===current));
-}
-function startTimer(){
- clearInterval(timer);timer=setInterval(()=>showSlide(current+1),2000);
-}
-document.getElementById("prevBtn").onclick=()=>{showSlide(current-1);startTimer()};
-document.getElementById("nextBtn").onclick=()=>{showSlide(current+1);startTimer()};
-async function loadImages(){
- let found=[];
- try{
-  const r=await fetch(API,{headers:{Accept:"application/vnd.github+json"}});
-  if(r.ok){
-   const data=await r.json();
-   found=data.filter(x=>x.type==="file"&&/\.(jpe?g|png|webp|gif)$/i.test(x.name)).map(x=>x.download_url);
+
+  slides.innerHTML = "";
+
+  dots.innerHTML = "";
+
+
+  images.forEach(
+    (src,index) => {
+
+      slides.appendChild(
+        makeSlide(src,index)
+      );
+
+
+      const dot =
+      document.createElement("button");
+
+      dot.className =
+      "dot" +
+      (index === 0
+        ? " active"
+        : "");
+
+      dot.setAttribute(
+        "aria-label",
+        `Slide ${index + 1}`
+      );
+
+
+      dot.onclick =
+      () => {
+
+        showSlide(index);
+
+        startTimer();
+
+      };
+
+
+      dots.appendChild(dot);
+
+    }
+  );
+
+
+  if(images.length > 1){
+
+    startTimer();
+
   }
- }catch(e){}
- const fallback=ROOT.map(imageUrl);
- images=unique([...found,...fallback]);
- renderSlides();
- renderGallery();
+
 }
-function renderGallery(){
- gallery.innerHTML="";
- if(!images.length){gallery.innerHTML='<div class="gallery-empty" style="grid-column:1/-1">No photos found.</div>';return}
- images.forEach((src,i)=>{
-  const item=document.createElement("div");item.className="gallery-item";
-  const im=document.createElement("img");im.src=src;im.alt=`Dharmabandh village memory photo ${i+1}`;im.loading="lazy";
-  item.appendChild(im);item.onclick=()=>openLightbox(src,im.alt);gallery.appendChild(item);
- });
+
+
+function showSlide(number){
+
+  if(!images.length){
+
+    return;
+
+  }
+
+
+  const elements =
+  slides.children;
+
+
+  current =
+  (number + images.length)
+  % images.length;
+
+
+  [
+    ...elements
+  ].forEach(
+    (element,index) => {
+
+      element.classList.toggle(
+        "active",
+        index === current
+      );
+
+    }
+  );
+
+
+  [
+    ...dots.children
+  ].forEach(
+    (dot,index) => {
+
+      dot.classList.toggle(
+        "active",
+        index === current
+      );
+
+    }
+  );
+
 }
-const lightbox=document.getElementById("lightbox"),lightboxImg=document.getElementById("lightboxImg");
-function openLightbox(src,alt){lightboxImg.src=src;lightboxImg.alt=alt;lightbox.classList.add("open")}
-function closeLightbox(){lightbox.classList.remove("open");lightboxImg.src=""}
-document.getElementById("closeLightbox").onclick=closeLightbox;
-lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeLightbox()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLightbox()});
-const menuBtn=document.getElementById("menuBtn"),navLinks=document.getElementById("navLinks");
-menuBtn.onclick=()=>navLinks.classList.toggle("open");
-navLinks.querySelectorAll("a").forEach(a=>a.onclick=()=>navLinks.classList.remove("open"));
+
+
+/* =========================================================
+   4 SECOND AUTO SLIDESHOW
+========================================================= */
+
+function startTimer(){
+
+  clearInterval(timer);
+
+
+  timer =
+  setInterval(
+    () => {
+
+      showSlide(
+        current + 1
+      );
+
+    },
+    SLIDE_TIME
+  );
+
+}
+
+
+document
+.getElementById("prevBtn")
+.onclick =
+() => {
+
+  showSlide(
+    current - 1
+  );
+
+  startTimer();
+
+};
+
+
+document
+.getElementById("nextBtn")
+.onclick =
+() => {
+
+  showSlide(
+    current + 1
+  );
+
+  startTimer();
+
+};
+
+
+/* =========================================================
+   LOAD GITHUB PHOTOS
+========================================================= */
+
+async function loadGitHubImages(){
+
+  let found = [];
+
+
+  try{
+
+    const response =
+    await fetch(
+      GITHUB_API,
+      {
+        headers:{
+          Accept:
+          "application/vnd.github+json"
+        }
+      }
+    );
+
+
+    if(response.ok){
+
+      const data =
+      await response.json();
+
+
+      found =
+      data
+      .filter(
+        item =>
+        item.type === "file" &&
+        /\.(jpe?g|png|webp|gif)$/i
+        .test(item.name)
+      )
+      .map(
+        item =>
+        item.download_url
+      );
+
+    }
+
+  }catch(error){
+
+    console.log(
+      "GitHub images could not be loaded:",
+      error
+    );
+
+  }
+
+
+  const fallback =
+  GITHUB_ROOT.map(
+    githubImageUrl
+  );
+
+
+  return unique(
+    [
+      ...found,
+      ...fallback
+    ]
+  );
+
+}
+
+
+/* =========================================================
+   LOAD SUPABASE PHOTOS
+========================================================= */
+
+async function loadSupabaseImages(){
+
+  try{
+
+    const response =
+    await fetch(
+
+      SUPABASE_URL +
+      "/rest/v1/photo_submissions" +
+      "?select=name,caption,photo_path,file_path,status,created_at" +
+      "&photo_path=not.is.null" +
+      "&order=created_at.desc",
+
+      {
+
+        method:"GET",
+
+        headers:{
+
+          "apikey":
+          SUPABASE_KEY,
+
+          "Authorization":
+          "Bearer " +
+          SUPABASE_KEY,
+
+          "Accept":
+          "application/json"
+
+        }
+
+      }
+
+    );
+
+
+    if(!response.ok){
+
+      const errorText =
+      await response.text();
+
+      console.error(
+        "Supabase gallery error:",
+        errorText
+      );
+
+      return [];
+
+    }
+
+
+    const data =
+    await response.json();
+
+
+    if(!Array.isArray(data)){
+
+      return [];
+
+    }
+
+
+    return data
+    .filter(
+      item =>
+      item.photo_path ||
+      item.file_path
+    )
+    .map(
+      item => {
+
+        const path =
+        item.photo_path ||
+        item.file_path;
+
+        return {
+
+          url:
+          supabaseImageUrl(path),
+
+          name:
+          item.name || "Dharmabandh",
+
+          caption:
+          item.caption || ""
+
+        };
+
+      }
+    );
+
+
+  }catch(error){
+
+    console.error(
+      "Supabase photos error:",
+      error
+    );
+
+    return [];
+
+  }
+
+}
+
+
+/* =========================================================
+   LOAD ALL PHOTOS
+========================================================= */
+
+async function loadImages(){
+
+  gallery.innerHTML =
+  '<div class="gallery-empty" style="grid-column:1/-1">तस्वीरें लोड हो रही हैं…</div>';
+
+
+  const githubImages =
+  await loadGitHubImages();
+
+
+  const supabaseImages =
+  await loadSupabaseImages();
+
+
+  /*
+    Supabase photos first,
+    then existing GitHub photos
+  */
+
+  const supabaseUrls =
+  supabaseImages.map(
+    item => item.url
+  );
+
+
+  images =
+  unique(
+    [
+      ...supabaseUrls,
+      ...githubImages
+    ]
+  );
+
+
+  renderSlides();
+
+  renderGallery(
+    supabaseImages
+  );
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+function renderGallery(
+  supabaseImages = []
+){
+
+  gallery.innerHTML = "";
+
+
+  if(!images.length){
+
+    gallery.innerHTML =
+    '<div class="gallery-empty" style="grid-column:1/-1">No photos found.</div>';
+
+    return;
+
+  }
+
+
+  const supabaseMap =
+  new Map(
+    supabaseImages.map(
+      item =>
+      [
+        item.url,
+        item
+      ]
+    )
+  );
+
+
+  images.forEach(
+    (src,index) => {
+
+      const item =
+      document.createElement("div");
+
+      item.className =
+      "gallery-item";
+
+
+      const img =
+      document.createElement("img");
+
+      img.src =
+      src;
+
+      img.alt =
+      `Dharmabandh village memory photo ${index + 1}`;
+
+      img.loading =
+      "lazy";
+
+
+      const info =
+      supabaseMap.get(src);
+
+
+      if(info && info.caption){
+
+        img.title =
+        info.caption;
+
+      }
+
+
+      item.appendChild(img);
+
+
+      item.onclick =
+      () => {
+
+        openLightbox(
+          src,
+          info && info.caption
+            ? info.caption
+            : img.alt
+        );
+
+      };
+
+
+      gallery.appendChild(item);
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+const lightbox =
+document.getElementById(
+  "lightbox"
+);
+
+const lightboxImg =
+document.getElementById(
+  "lightboxImg"
+);
+
+
+function openLightbox(
+  src,
+  alt
+){
+
+  lightboxImg.src =
+  src;
+
+  lightboxImg.alt =
+  alt;
+
+
+  lightbox.classList.add(
+    "open"
+  );
+
+}
+
+
+function closeLightbox(){
+
+  lightbox.classList.remove(
+    "open"
+  );
+
+  lightboxImg.src =
+  "";
+
+}
+
+
+document
+.getElementById(
+  "closeLightbox"
+)
+.onclick =
+closeLightbox;
+
+
+lightbox.addEventListener(
+  "click",
+  event => {
+
+    if(
+      event.target ===
+      lightbox
+    ){
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if(
+      event.key ===
+      "Escape"
+    ){
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn =
+document.getElementById(
+  "menuBtn"
+);
+
+const navLinks =
+document.getElementById(
+  "navLinks"
+);
+
+
+menuBtn.onclick =
+() => {
+
+  navLinks.classList.toggle(
+    "open"
+  );
+
+};
+
+
+navLinks
+.querySelectorAll("a")
+.forEach(
+  link => {
+
+    link.onclick =
+    () => {
+
+      navLinks.classList.remove(
+        "open"
+      );
+
+    };
+
+  }
+);
+
+
+/* =========================================================
+   START
+========================================================= */
+
 loadImages();
+
 </script>
+
 </body>
 </html>
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
-<!-- Dharmabandh portal: maintained for easy GitHub Pages deployment. -->
