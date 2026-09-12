@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -47,6 +46,7 @@
 </script>
 
 <style>
+
 :root{
 --green:#2f6b45;
 --green2:#1e4d31;
@@ -74,6 +74,28 @@ font-family:system-ui,-apple-system,"Noto Sans Devanagari","Segoe UI",sans-serif
 background:var(--cream);
 color:var(--ink);
 line-height:1.65
+}
+
+/* ================================
+   CONTACT BAR
+================================ */
+
+.contact-bar{
+background:var(--green2);
+color:#fff;
+text-align:center;
+padding:8px 15px;
+font-size:.9rem;
+font-weight:700
+}
+
+.contact-bar a{
+color:#fff;
+text-decoration:none
+}
+
+.contact-bar a:hover{
+text-decoration:underline
 }
 
 a{
@@ -559,6 +581,48 @@ color:var(--green2);
 margin:10px 0 20px
 }
 
+/* ================================
+   CREATOR SECTION
+================================ */
+
+.creator{
+background:var(--cream);
+padding:58px 0 45px
+}
+
+.creator-box{
+max-width:420px;
+margin:auto;
+text-align:center;
+background:#fff;
+padding:30px 25px 28px;
+border-radius:24px;
+box-shadow:var(--shadow)
+}
+
+.creator-box p{
+color:var(--muted);
+font-size:.9rem;
+font-weight:700;
+margin-bottom:15px
+}
+
+.creator-box img{
+width:180px;
+height:240px;
+object-fit:cover;
+display:block;
+margin:0 auto 16px;
+border-radius:16px;
+box-shadow:0 8px 24px rgba(0,0,0,.15)
+}
+
+.creator-box h2{
+color:var(--green2);
+font-size:1.55rem;
+margin:0
+}
+
 footer{
 background:#183526;
 color:#fff;
@@ -681,6 +745,11 @@ grid-template-columns:1fr
 flex-direction:column
 }
 
+.contact-bar{
+font-size:.82rem;
+padding:7px 10px
+}
+
 }
 
 @media(max-width:480px){
@@ -718,6 +787,17 @@ padding:28px 20px
 </head>
 
 <body>
+
+<!-- ================================
+     CONTACT
+================================ -->
+
+<div class="contact-bar">
+📧 Contact:
+<a href="mailto:dharmabandhb@gmail.com">
+dharmabandhb@gmail.com
+</a>
+</div>
 
 <nav class="nav">
 <div class="container nav-inner">
@@ -758,44 +838,63 @@ padding:28px 20px
 <div class="dots" id="dots"></div>
 
 <div class="hero-content">
-<h1 data-hi="धर्माबांध में आपका स्वागत है" data-en="Welcome to Dharmabandh">
+
+<h1
+data-hi="धर्माबांध में आपका स्वागत है"
+data-en="Welcome to Dharmabandh">
 धर्माबांध में आपका स्वागत है
 </h1>
 
-<p data-hi="हमारा गाँव • हमारी पहचान • हमारी यादें"
+<p
+data-hi="हमारा गाँव • हमारी पहचान • हमारी यादें"
 data-en="Our Village • Our Identity • Our Memories">
 हमारा गाँव • हमारी पहचान • हमारी यादें
 </p>
+
 </div>
 
 </section>
 
+
 <section class="about" id="about">
+
 <div class="container">
 
 <div class="section-head">
-<h2 data-hi="हमारा गाँव" data-en="Our Village">हमारा गाँव</h2>
-<p data-hi="धर्माबांध की पहचान और सार्वजनिक रूप से उपलब्ध जनगणना जानकारी"
+
+<h2
+data-hi="हमारा गाँव"
+data-en="Our Village">
+हमारा गाँव
+</h2>
+
+<p
+data-hi="धर्माबांध की पहचान और सार्वजनिक रूप से उपलब्ध जनगणना जानकारी"
 data-en="Dharmabandh’s identity and publicly available census information">
 धर्माबांध की पहचान और सार्वजनिक रूप से उपलब्ध जनगणना जानकारी
 </p>
+
 </div>
+
 
 <div class="about-grid">
 
 <div class="card about-copy">
 
-<p data-hi="धर्माबांध हमारा गाँव है—जहाँ हमारी जड़ें, रिश्ते, यादें और भविष्य जुड़े हैं। यह पोर्टल गाँव की तस्वीरों, यादों, कार्यक्रमों और समुदाय से जुड़ी जानकारी को एक जगह संजोने के लिए बनाया गया है।"
+<p
+data-hi="धर्माबांध हमारा गाँव है—जहाँ हमारी जड़ें, रिश्ते, यादें और भविष्य जुड़े हैं। यह पोर्टल गाँव की तस्वीरों, यादों, कार्यक्रमों और समुदाय से जुड़ी जानकारी को एक जगह संजोने के लिए बनाया गया है।"
 data-en="Dharmabandh is our village—where our roots, relationships, memories and future come together. This portal brings village photos, memories, events and community information together in one place.">
 धर्माबांध हमारा गाँव है—जहाँ हमारी जड़ें, रिश्ते, यादें और भविष्य जुड़े हैं। यह पोर्टल गाँव की तस्वीरों, यादों, कार्यक्रमों और समुदाय से जुड़ी जानकारी को एक जगह संजोने के लिए बनाया गया है।
 </p>
 
-<p data-hi="हमारा उद्देश्य गाँव की डिजिटल पहचान को सरल, सुंदर और आने वाली पीढ़ियों के लिए उपयोगी बनाना है।"
+<p
+data-hi="हमारा उद्देश्य गाँव की डिजिटल पहचान को सरल, सुंदर और आने वाली पीढ़ियों के लिए उपयोगी बनाना है।"
 data-en="Our goal is to build a simple, beautiful digital identity for the village that remains useful for future generations.">
 हमारा उद्देश्य गाँव की डिजिटल पहचान को सरल, सुंदर और आने वाली पीढ़ियों के लिए उपयोगी बनाना है।
 </p>
 
 </div>
+
 
 <div class="card">
 
@@ -853,66 +952,112 @@ data-en="Our goal is to build a simple, beautiful digital identity for the villa
 </p>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
 
+
 <section class="gallery" id="gallery">
+
 <div class="container">
 
 <div class="section-head">
-<h2 data-hi="धर्माबांध की तस्वीरें" data-en="Photos of Dharmabandh">
+
+<h2
+data-hi="धर्माबांध की तस्वीरें"
+data-en="Photos of Dharmabandh">
 धर्माबांध की तस्वीरें
 </h2>
 
-<p data-hi="हमारे गाँव की खूबसूरत यादें"
+<p
+data-hi="हमारे गाँव की खूबसूरत यादें"
 data-en="Beautiful memories of our village">
 हमारे गाँव की खूबसूरत यादें
 </p>
+
 </div>
+
 
 <div class="gallery-grid" id="galleryGrid">
-<div class="gallery-empty" style="grid-column:1/-1">
+
+<div
+class="gallery-empty"
+style="grid-column:1/-1">
 तस्वीरें लोड हो रही हैं…
 </div>
+
 </div>
 
 </div>
+
 </section>
 
+
 <section class="events" id="events">
+
 <div class="container">
 
 <div class="section-head">
+
 <h2>कार्यक्रम और सूचनाएँ</h2>
+
 <p>गाँव से जुड़ी जानकारी</p>
+
 </div>
+
 
 <div class="event-grid">
 
 <article class="event-card">
+
 <div class="event-icon">🎉</div>
+
 <h3>गाँव के त्योहार</h3>
-<p>यहाँ वास्तविक त्योहारों और कार्यक्रमों की जानकारी जोड़ी जा सकती है।</p>
+
+<p>
+यहाँ वास्तविक त्योहारों और कार्यक्रमों की जानकारी जोड़ी जा सकती है।
+</p>
+
 </article>
 
+
 <article class="event-card">
+
 <div class="event-icon">🏏</div>
+
 <h3>युवा गतिविधियाँ</h3>
-<p>यहाँ वास्तविक युवा गतिविधियों और आयोजनों की जानकारी जोड़ी जा सकती है।</p>
+
+<p>
+यहाँ वास्तविक युवा गतिविधियों और आयोजनों की जानकारी जोड़ी जा सकती है।
+</p>
+
 </article>
+
 
 <article class="event-card">
+
 <div class="event-icon">📢</div>
+
 <h3>नोटिस बोर्ड</h3>
-<p>यहाँ वास्तविक गाँव की सूचनाएँ और घोषणाएँ जोड़ी जा सकती हैं।</p>
+
+<p>
+यहाँ वास्तविक गाँव की सूचनाएँ और घोषणाएँ जोड़ी जा सकती हैं।
+</p>
+
 </article>
 
 </div>
+
 </div>
+
 </section>
 
+
 <section class="youth" id="community">
+
 <div class="container">
 
 <div class="youth-box">
@@ -930,10 +1075,14 @@ data-en="Beautiful memories of our village">
 </p>
 
 </div>
+
 </div>
+
 </section>
 
+
 <section class="memories">
+
 <div class="container memory-box">
 
 <h2>धर्माबांध की यादें</h2>
@@ -949,15 +1098,22 @@ data-en="Beautiful memories of our village">
 </a>
 
 </div>
+
 </section>
 
+
 <section class="location" id="location">
+
 <div class="container">
 
 <div class="section-head">
+
 <h2>धर्माबांध का स्थान</h2>
+
 <p>Google Maps पर गाँव का स्थान देखें</p>
+
 </div>
+
 
 <div class="map-card">
 
@@ -967,7 +1123,8 @@ data-en="Beautiful memories of our village">
 धर्माबांध, धनबाद, झारखंड, भारत — 828304
 </div>
 
-<a class="btn"
+<a
+class="btn"
 href="https://maps.app.goo.gl/JfcoojipwWSdz7aG7?g_st=ac"
 target="_blank"
 rel="noopener">
@@ -975,10 +1132,46 @@ rel="noopener">
 </a>
 
 </div>
+
 </div>
+
 </section>
 
 </main>
+
+
+<!-- ================================
+     CREATOR
+================================ -->
+
+<section
+class="creator"
+aria-label="Website creator">
+
+<div class="container">
+
+<div class="creator-box">
+
+<p>
+Created &amp; Maintained by
+</p>
+
+<img
+src="images/omkar-mahato.jpg"
+alt="Omkar Mahato"
+loading="lazy"
+>
+
+<h2>
+Omkar Mahato
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
 
 <footer>
 
@@ -987,32 +1180,55 @@ rel="noopener">
 <div class="footer-inner">
 
 <div class="footer-brand">
+
 🌿 धर्माबांध
-<p>हमारा गाँव • हमारी पहचान</p>
+
+<p>
+हमारा गाँव • हमारी पहचान
+</p>
+
 </div>
 
+
 <div class="footer-links">
+
 <a href="#home">होम</a>
 <a href="#about">हमारा गाँव</a>
 <a href="#gallery">गैलरी</a>
 <a href="#events">कार्यक्रम</a>
 <a href="#community">समुदाय</a>
 <a href="#location">स्थान</a>
+
 </div>
 
 </div>
+
 
 <div class="copy">
 © 2026 Dharmabandh Community Portal
 </div>
 
 </div>
+
 </footer>
 
+
 <div class="lightbox" id="lightbox">
-<button class="close-lightbox" id="closeLightbox">×</button>
-<img id="lightboxImg" src="" alt="">
+
+<button
+class="close-lightbox"
+id="closeLightbox">
+×
+</button>
+
+<img
+id="lightboxImg"
+src=""
+alt=""
+>
+
 </div>
+
 
 <script>
 
@@ -1043,8 +1259,10 @@ const SLIDE_TIME = 4000;
 let images = [];
 let current = 0;
 let timer = null;
+
 let language =
 localStorage.getItem("dharmabandh-language") || "hi";
+
 
 const slides =
 document.getElementById("slides");
@@ -1098,13 +1316,16 @@ language
 
 }
 
+
 document.getElementById("langHi")
 .onclick =
 () => setLanguage("hi");
 
+
 document.getElementById("langEn")
 .onclick =
 () => setLanguage("en");
+
 
 setLanguage(language);
 
@@ -1114,8 +1335,11 @@ setLanguage(language);
 ================================ */
 
 function unique(arr){
+
 return [...new Set(arr)];
+
 }
+
 
 function githubImageUrl(name){
 
@@ -1125,9 +1349,11 @@ encodeURIComponent(name);
 
 }
 
+
 function supabaseImageUrl(path){
 
-if(!path) return null;
+if(!path)
+return null;
 
 return (
 SUPABASE_URL +
@@ -1136,7 +1362,9 @@ SUPABASE_BUCKET +
 "/" +
 path
 .split("/")
-.map(part => encodeURIComponent(part))
+.map(part =>
+encodeURIComponent(part)
+)
 .join("/")
 );
 
@@ -1155,9 +1383,11 @@ const img = new Image();
 
 let finished = false;
 
+
 function finish(result){
 
-if(finished) return;
+if(finished)
+return;
 
 finished = true;
 
@@ -1165,16 +1395,20 @@ resolve(result);
 
 }
 
+
 img.onload =
 () => finish(url);
 
+
 img.onerror =
 () => finish(null);
+
 
 setTimeout(
 () => finish(null),
 10000
 );
+
 
 img.src = url;
 
@@ -1204,6 +1438,7 @@ Accept:
 }
 );
 
+
 if(response.ok){
 
 const data =
@@ -1231,10 +1466,12 @@ error
 
 }
 
+
 const fallback =
 GITHUB_ROOT.map(
 githubImageUrl
 );
+
 
 const candidates =
 unique([
@@ -1242,12 +1479,14 @@ unique([
 ...fallback
 ]);
 
+
 const checked =
 await Promise.all(
 candidates.map(
 checkImage
 )
 );
+
 
 return checked.filter(Boolean);
 
@@ -1277,8 +1516,10 @@ Authorization:
 "Bearer " + SUPABASE_KEY,
 Accept:"application/json"
 }
+
 }
 );
+
 
 if(!response.ok){
 
@@ -1291,11 +1532,14 @@ return [];
 
 }
 
+
 const data =
 await response.json();
 
+
 if(!Array.isArray(data))
 return [];
+
 
 const candidates =
 data
@@ -1313,6 +1557,7 @@ return supabaseImageUrl(path);
 })
 .filter(Boolean);
 
+
 const checked =
 await Promise.all(
 candidates.map(
@@ -1320,7 +1565,9 @@ checkImage
 )
 );
 
+
 return checked.filter(Boolean);
+
 
 }catch(error){
 
@@ -1349,14 +1596,17 @@ slide.className =
 "slide" +
 (index === 0 ? " active" : "");
 
+
 const bg =
 document.createElement("div");
 
 bg.className =
 "slide-bg";
 
+
 bg.style.backgroundImage =
 `url("${url}")`;
+
 
 const img =
 document.createElement("img");
@@ -1371,10 +1621,16 @@ index === 0
 ? "eager"
 : "lazy";
 
+
 img.onerror =
 () => slide.remove();
 
-slide.append(bg,img);
+
+slide.append(
+bg,
+img
+);
+
 
 return slide;
 
@@ -1389,8 +1645,10 @@ dots.innerHTML = "";
 
 current = 0;
 
+
 if(!images.length)
 return;
+
 
 images.forEach(
 (url,index) => {
@@ -1399,17 +1657,21 @@ slides.appendChild(
 makeSlide(url,index)
 );
 
+
 const dot =
 document.createElement("button");
+
 
 dot.className =
 "dot" +
 (index === 0 ? " active" : "");
 
+
 dot.setAttribute(
 "aria-label",
 `Slide ${index + 1}`
 );
+
 
 dot.onclick =
 () => {
@@ -1420,9 +1682,11 @@ startTimer();
 
 };
 
+
 dots.appendChild(dot);
 
 });
+
 
 if(images.length > 1)
 startTimer();
@@ -1435,15 +1699,19 @@ function showSlide(number){
 if(!images.length)
 return;
 
+
 const elements =
 slides.children;
+
 
 if(!elements.length)
 return;
 
+
 current =
 (number + images.length) %
 images.length;
+
 
 [...elements].forEach(
 (element,index) => {
@@ -1454,6 +1722,7 @@ index === current
 );
 
 });
+
 
 [...dots.children].forEach(
 (dot,index) => {
@@ -1468,18 +1737,23 @@ index === current
 }
 
 
-/* 4 SECOND TIMER */
+/* ================================
+   4 SECOND TIMER
+================================ */
 
 function startTimer(){
 
 clearInterval(timer);
 
+
 if(images.length <= 1)
 return;
 
+
 timer =
 setInterval(
-() => showSlide(current + 1),
+() =>
+showSlide(current + 1),
 SLIDE_TIME
 );
 
@@ -1500,6 +1774,7 @@ startTimer();
 
 };
 
+
 document.getElementById("nextBtn")
 .onclick =
 () => {
@@ -1519,6 +1794,7 @@ function renderGallery(){
 
 gallery.innerHTML = "";
 
+
 if(!images.length){
 
 gallery.innerHTML =
@@ -1530,6 +1806,7 @@ return;
 
 }
 
+
 images.forEach(
 (url,index) => {
 
@@ -1539,6 +1816,7 @@ document.createElement("div");
 item.className =
 "gallery-item";
 
+
 const img =
 document.createElement("img");
 
@@ -1547,18 +1825,24 @@ img.src = url;
 img.alt =
 `Dharmabandh village memory photo ${index + 1}`;
 
-img.loading = "lazy";
+img.loading =
+"lazy";
+
 
 img.onerror =
 () => item.remove();
 
+
 item.appendChild(img);
 
+
 item.onclick =
-() => openLightbox(
+() =>
+openLightbox(
 url,
 img.alt
 );
+
 
 gallery.appendChild(item);
 
@@ -1578,6 +1862,7 @@ gallery.innerHTML =
 'तस्वीरें लोड हो रही हैं…' +
 '</div>';
 
+
 const [
 githubImages,
 supabaseImages
@@ -1587,11 +1872,13 @@ loadGitHubImages(),
 loadSupabaseImages()
 ]);
 
+
 const allCandidates =
 unique([
 ...supabaseImages,
 ...githubImages
 ]);
+
 
 const checked =
 await Promise.all(
@@ -1600,8 +1887,10 @@ checkImage
 )
 );
 
+
 images =
 checked.filter(Boolean);
+
 
 renderSlides();
 
@@ -1619,10 +1908,12 @@ document.getElementById(
 "lightbox"
 );
 
+
 const lightboxImg =
 document.getElementById(
 "lightboxImg"
 );
+
 
 function openLightbox(
 url,
@@ -1639,6 +1930,7 @@ lightbox.classList.add(
 
 }
 
+
 function closeLightbox(){
 
 lightbox.classList.remove(
@@ -1649,10 +1941,12 @@ lightboxImg.src = "";
 
 }
 
+
 document.getElementById(
 "closeLightbox"
 ).onclick =
 closeLightbox;
+
 
 lightbox.onclick =
 event => {
@@ -1661,6 +1955,7 @@ if(event.target === lightbox)
 closeLightbox();
 
 };
+
 
 document.addEventListener(
 "keydown",
@@ -1682,16 +1977,19 @@ document.getElementById(
 "menuBtn"
 );
 
+
 const navLinks =
 document.getElementById(
 "navLinks"
 );
+
 
 menuBtn.onclick =
 () =>
 navLinks.classList.toggle(
 "open"
 );
+
 
 navLinks
 .querySelectorAll("a")
@@ -1716,4 +2014,3 @@ loadImages();
 
 </body>
 </html>
-```
